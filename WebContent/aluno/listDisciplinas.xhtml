@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<ui:composition template="/template.xhtml">
+    <ui:define name="top-bar">
+        <ui:include src="/aluno/alunoTopbar.xhtml"></ui:include>
+    </ui:define>
+    <ui:define name="side-bar">
+        <ui:include src="/aluno/alunoSidebar.xhtml"></ui:include>
+    </ui:define>
+
+    <ui:define name="main-content">
+        <div class="container-fluid">
+            <div class="side-body">
+                <div class="page-title">
+                    <span class="title">1º Ano - 2015/4</span>
+                    <div class="description"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <div class="title">Disciplinas</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <table class="datatable table table-striped" cellspacing="0"
+                                       width="100%">
+                                    <thead>
+                                    <tr>
+                                        <th>Disciplina</th>
+                                        <th>Nome do Professor</th>
+                                        <th>Tarefas</th>
+                                        <th>Dias de aulas</th>
+                                        <th>Frequência</th>
+                                    </tr>
+                                    </thead>
+                                    <tfoot>
+                                    <tr>
+                                        <th>Disciplina</th>
+                                        <th>Nome do Professor</th>
+                                        <th>Tarefas</th>
+                                        <th>Dias de aulas</th>
+                                        <th>Frequência</th>
+                                    </tr>
+                                    </tfoot>
+                                    <tbody>
+                                    <tr>
+                                        <td>Português</td>
+                                        <td>Alexandre Gusmão</td>
+                                        <td>18</td>
+                                        <td>Quinta-feira</td>
+                                        <td>70%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Matemática</td>
+                                        <td>Roberto Alencar</td>
+                                        <td>12</td>
+                                        <td>Quarta-feira</td>
+                                        <td>90%</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Inglês</td>
+                                        <td>Francisco Duarte</td>
+                                        <td>4</td>
+                                        <td>Sexta-feira</td>
+                                        <td>89%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Física</td>
+                                        <td>Felipe Azevedo</td>
+                                        <td>8</td>
+                                        <td>Sexta-feira</td>
+                                        <td>85%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Química</td>
+                                        <td>Gabriela Cunha</td>
+                                        <td>7</td>
+                                        <td>Segunda-feira</td>
+                                        <td>80%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>História</td>
+                                        <td>Fernanda Martins</td>
+                                        <td>4</td>
+                                        <td>Terça-feira</td>
+                                        <td>79%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Geografia</td>
+                                        <td>Alessandra Klinke</td>
+                                        <td>2</td>
+                                        <td>Segunda-feira</td>
+                                        <td>76%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Biologia</td>
+                                        <td>Carlos Alberto Nogueira</td>
+                                        <td>4</td>
+                                        <td>Terça-feira</td>
+                                        <td>80%</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="app-footer">
+            <div class="wrapper">
+				<span class="pull-right">2.0 <a href=""><i
+                        class="fa fa-long-arrow-up"></i></a></span> © 2015 Copyright.
+            </div>
+        </footer>
+    </ui:define>
+
+
+</ui:composition>
+
+
+</html>

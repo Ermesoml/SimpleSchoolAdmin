@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui">
+
+<body>
+
+<ui:composition template="/template.xhtml">
+    <ui:define name="top-bar">
+        <ui:include src="/menus/topbar.xhtml"/>
+    </ui:define>
+
+    <ui:define name="side-bar">
+        <ui:include src="/menus/sidebar.xhtml"/>
+    </ui:define>
+
+    <ui:define name="main-content">
+        <div class="container-fluid">
+            <div class="side-body">
+                <div class="page-title">
+                    <span class="title">Novo Aluno</span>
+
+                    <div class="description">Editar Aluno</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h:form id="newFuncForm" prependId="false">
+                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="name">Nome:</label>
+                                            <h:inputText id="name" value="#{editStudentBean.student.name}"
+                                                         styleClass="form-control"
+                                                         pt:type="text"
+                                                         readonly="true"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="birthdate">Data de Nascimento:</label>
+                                            <h:inputText id="birthdate"
+                                                         value="#{editStudentBean.student.birthDate}"
+                                                         styleClass="form-control"
+                                                         pt:type="date"
+                                                         readonly="true">
+                                                <f:convertDateTime pattern="yyyy-MM-dd"/>
+                                            </h:inputText>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                        <div class="form-group">
+                                            <label for="rg">RG:</label>
+                                            <h:inputText id="rg"
+                                                         value="#{editStudentBean.student.idNumber}"
+                                                         styleClass="form-control"
+                                                         pt:type="number"
+                                                         readonly="true"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                        <div class="form-group">
+                                            <label for="cpf">CPF:</label>
+                                            <p:inputMask id="cpf" value="#{editStudentBean.student.cpf}"
+                                                         mask="999.999.999-99"
+                                                         styleClass="form-control"
+                                                         pt:type="number"
+                                                         readonly="true"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                        <div class="form-group">
+                                            <label for="phone">Telefone:</label>
+                                            <p:inputMask id="phone" mask="(99)9999-9999"
+                                                         value="#{editStudentBean.student.phoneNumber}"
+                                                         styleClass="form-control"
+                                                         pt:type="number"
+                                                         required="true"
+                                                         requiredMessage="Digite o telefone"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                                        <div class="form-group">
+                                            <label for="email">E-Mail:</label>
+                                            <h:inputText id="email"
+                                                         value="#{editStudentBean.student.email}"
+                                                         styleClass="form-control"
+                                                         pt:type="email"
+                                                         required="true" requiredMessage="Digite o email"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="dTerm">Turma: </label>
+                                            <h:selectOneMenu styleClass="form-control" id="dTerm"
+                                                             value="#{editStudentBean.term}"
+                                                             converter="#{termConverter}">
+                                                <f:selectItems value="#{editStudentBean.terms}" var="t"
+                                                               itemLabel="#{t.termName}" itemValue="#{t}"/>
+                                            </h:selectOneMenu>
+                                        </div>
+                                    </div>
+
+                                    <h:commandButton
+                                            id="novoAlun" styleClass="btn btn-primary" value="Matricular Aluno"
+                                            action="#{editStudentBean.editStudent}"/>
+                                </h:form>
+                                <h:button outcome="/admin/gerAlunos.xhtml?faces-redirect=true"
+                                          id="btnBack" type="button" styleClass="btn btn-primary" value="Voltar"/>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <p:messages/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="app-footer">
+            <div class="wrapper">
+                <span class="pull-right">2.0 <a href=""><i class="fa fa-long-arrow-up"></i></a></span> © 2015 Copyright.
+            </div>
+        </footer>
+    </ui:define>
+
+
+</ui:composition>
+
+</body>
+
+</html>

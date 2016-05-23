@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+
+
+<ui:composition template="/template.xhtml">
+
+    <ui:define name="top-bar">
+        <ui:include src="/menus/topbar.xhtml"/>
+    </ui:define>
+
+    <ui:define name="side-bar">
+        <ui:include src="/menus/sidebar.xhtml"/>
+    </ui:define>
+
+    <ui:define name="main-content">
+        <h:panelGroup id="adminDash" rendered="#{request.isUserInRole('ROLE_ADMIN')}">
+            <ui:include src="/admin/adminDash.xhtml"/>
+        </h:panelGroup>
+
+        <footer class="app-footer">
+            <div class="wrapper">
+                <span class="pull-right">2.0 <a href=""><i class="fa fa-long-arrow-up"></i></a></span> © 2015 Copyright.
+            </div>
+        </footer>
+    </ui:define>
+</ui:composition>
+</html>

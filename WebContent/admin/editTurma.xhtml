@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+
+
+<ui:composition template="/template.xhtml">
+    <ui:define name="top-bar">
+        <ui:include src="/menus/adminTopbar.xhtml/adminTopbar.xhtml"></ui:include>
+    </ui:define>
+    <ui:define name="side-bar">
+        <ui:include src="/menus/adminSidebar.xhtml/adminSidebar.xhtml"></ui:include>
+    </ui:define>
+
+    <ui:define name="main-content">
+        <div class="container-fluid">
+            <div class="side-body padding-top">
+                <div class="row">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <div class="title">Informações Turma</div>
+                            </div>
+                            <div class="pull-right card-action">
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#modalCardProfileExample"><i class="fa fa-code"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row no-margin no-gap">
+                                <form class="" action="index.html" method="post">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="row">
+                                            <div class="row no-margin-bottom">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <div class="form-group">
+                                                        <label for="class">Turma:</label>
+                                                        <input type="text" class="form-control" id="class" placeholder="" required="true"></input>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row no-margin-bottom">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <div class="title">Dados Turma</div>
+                            </div>
+                            <div class="pull-right card-action">
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#modalCardProfileExample"><i class="fa fa-code"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row no-margin no-gap">
+                                <div class="sub-title">Horário</div>
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Disciplina</th>
+                                        <th>Horário</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="info">
+                                        <th scope="row">1</th>
+                                        <td>Matemática</td>
+                                        <td>23-1M</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row no-margin no-gap">
+                                <div class="sub-title">Média Turma por Disciplina</div>
+                                <canvas id="turmaMediaLineChart" class="chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="app-footer">
+            <div class="wrapper">
+                <span class="pull-right">2.0 <a href=""><i class="fa fa-long-arrow-up"></i></a></span> © 2015 Copyright.
+            </div>
+        </footer>
+    </ui:define>
+
+
+</ui:composition>
+
+
+</html>

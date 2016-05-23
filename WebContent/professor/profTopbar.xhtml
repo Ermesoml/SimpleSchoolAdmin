@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<body>
+<ui:composition>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-expand-toggle">
+                    <i class="fa fa-bars icon"></i>
+                </button>
+                <ol class="breadcrumb navbar-breadcrumb">
+                    <li class="active">Bem Vindo, Usuário!</li>
+                </ol>
+                <button type="button"
+                        class="navbar-right-expand-toggle pull-right visible-xs">
+                    <i class="fa fa-th icon"></i>
+                </button>
+            </div>
+            <!-- Início da barra de ferramentas superior -->
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown"><a class="dropdown-toggle"
+                                        data-toggle="dropdown" href="alunoIndex.html"> <i
+                        class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
+                </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li><a href="alunoIndex.html#">
+                            <div>
+                                <strong>Fulano da Silva</strong>
+                            </div>
+                            <div>
+                                Professor tenho uma dúvida a respeito de como criar o Web.xml
+                                em um maven project. Pode me ajudar <span
+                                    class="pull-right text-muted"> <em>Matemática</em>
+											</span>
+                            </div>
+
+                        </a></li>
+                        <li class="divider"></li>
+                        <li><a class="text-center" href="forum.html"> <strong>Read
+                            All Messages</strong> <i class="fa fa-angle-right"></i>
+                        </a></li>
+                    </ul></li>
+                <li class="dropdown"><a class="dropdown-toggle"
+                                        data-toggle="dropdown" href="alunoIndex.html"> <i
+                        class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+                </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li><a href="alunoIndex.html#">
+                            <div>
+                                <i class="fa fa-comment fa-fw"></i> New Comment <span
+                                    class="pull-right text-muted small">4 minutes ago</span>
+                            </div>
+                        </a></li>
+                        <li class="divider"></li>
+                        <li><a href="alunoIndex.html#">
+                            <div>
+                                <i class="fa fa-twitter fa-fw"></i> 3 New Followers <span
+                                    class="pull-right text-muted small">12 minutes ago</span>
+                            </div>
+                        </a></li>
+                        <li class="divider"></li>
+                        <li><a href="alunoIndex.html#">
+                            <div>
+                                <i class="fa fa-envelope fa-fw"></i> Message Sent <span
+                                    class="pull-right text-muted small">4 minutes ago</span>
+                            </div>
+                        </a></li>
+                        <li class="divider"></li>
+                        <li><a href="alunoIndex.html#">
+                            <div>
+                                <i class="fa fa-tasks fa-fw"></i> New Task <span
+                                    class="pull-right text-muted small">4 minutes ago</span>
+                            </div>
+                        </a></li>
+                        <li class="divider"></li>
+                        <li><a href="alunoIndex.html#">
+                            <div>
+                                <i class="fa fa-upload fa-fw"></i> Server Rebooted <span
+                                    class="pull-right text-muted small">4 minutes ago</span>
+                            </div>
+                        </a></li>
+                        <li class="divider"></li>
+                        <li><a class="text-center" href="alunoIndex.html#"> <strong>See
+                            All Alerts</strong> <i class="fa fa-angle-right"></i>
+                        </a></li>
+                    </ul> <!-- /.dropdown-alerts --></li>
+                <!-- /.dropdown -->
+                <li class="dropdown profile"><a href="#"
+                                                class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                                aria-expanded="false">Bart Simpson <span class="caret"></span></a>
+                    <ul class="dropdown-menu animated fadeInDown">
+                        <li>
+                            <div class="profile-info">
+                                <h4 class="username">Bart Simpson</h4>
+                                <p>bart@simpson.com</p>
+                                <div class="btn-group margin-bottom-2x" role="group">
+                                    <button type="button" class="btn btn-default">
+                                        <i class="fa fa-sign-out"></i> Sair
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul></li>
+
+            </ul>
+        </div>
+    </nav>
+</ui:composition>
+</body>
+
+
+</html>
