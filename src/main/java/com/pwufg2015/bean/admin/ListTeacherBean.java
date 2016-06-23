@@ -50,6 +50,13 @@ public class ListTeacherBean extends MB {
         }
 
     }
+    
+    public String showStatus(Teacher t) {
+    	if (t.getActive()) {
+    		return "Ativo";
+    	}
+    	return "Inativo";
+    }
 
     //region Getter and Setter
     public DataModel<Teacher> getModel() {

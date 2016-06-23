@@ -56,7 +56,7 @@
 
                                         <h:column>
                                             <f:facet name="header">Status</f:facet>
-                                            #{t.active}
+                                            #{listTeacherBean.showStatus(t)}
                                         </h:column>
 
                                         <h:column>
@@ -71,7 +71,7 @@
                                 </h:form>
                                 <button type="button" class="btn btn-primary">Voltar</button>
                                 <h:button outcome="/admin/novoProfessor.xhtml?faces-redirect=true"
-                                          id="novoFunc" type="button" styleClass="btn btn-primary" value="Novo Funcionário"/>
+                                          id="novoFunc" type="button" styleClass="btn btn-primary" value="Novo Professor"/>
                             </div>
                         </div>
                     </div>
