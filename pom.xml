@@ -3,17 +3,17 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>edu.csufg2016</groupId>
-	<artifactId>pwproj</artifactId>
+	<artifactId>csproj</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>castorproj</name>
+	<name>Sistema Administrativo Escolar</name>
 
 	<properties>
 		<!-- JSF -->
 		<jsf.version>2.2.10</jsf.version>
 
 		<!-- Java Properties -->
-		<java.version>1.7</java.version>
+		<java.version>1.8</java.version>
 
 		<!-- Encoding -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -202,6 +202,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.4.1208.jre7</version>
+		</dependency>
+
+		<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
@@ -330,8 +336,8 @@
 					</configuration>
 					<deployables>
 						<deployable>
-							<groupId>edu.pwufg2015</groupId>
-							<artifactId>pwproj</artifactId>
+							<groupId>edu.csufg2016</groupId>
+							<artifactId>csproj</artifactId>
 							<type>war</type>
 							<properties>
 								<context>${project.build.finalName}</context>
