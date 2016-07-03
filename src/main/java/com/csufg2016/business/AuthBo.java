@@ -17,7 +17,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Service("AuthService")
-public class AuthBo implements IAuthBo,UserDetailsService {
+public class AuthBo implements IAuthBo, UserDetailsService {
 
     @Autowired
     UserDaoContract userDao;
@@ -28,7 +28,7 @@ public class AuthBo implements IAuthBo,UserDetailsService {
 
         com.csufg2016.entities.User domainUser = userDao.getByLogin(login);
 
-        if(domainUser.getUserName().equals(""))
+        if (domainUser.getUserName().equals(""))
             throw new UsernameNotFoundException("Usuário não encontrado");
 
         boolean enabled = true;
@@ -58,10 +58,9 @@ public class AuthBo implements IAuthBo,UserDetailsService {
         if (role.intValue() == 1)
             roles.add("ROLE_ADMIN");
         else if (role.intValue() == 2)
-            roles.add("ROLE_TEACHER");
-        else if (role.intValue() == 3)
             roles.add("ROLE_STUDENT");
-
+        else if (role.intValue() == 3)
+            roles.add("ROLE_TEACHER");
 
         return roles;
     }

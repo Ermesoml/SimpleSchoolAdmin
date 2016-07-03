@@ -25,7 +25,7 @@
 
         </h:panelGroup>
         <h:panelGroup id="teacherDash" rendered="#{request.isUserInRole('ROLE_TEACHER')}">
-
+            <ui:include src="/professor/profDash.xhtml"/>
         </h:panelGroup>
         <footer class="app-footer">
             <div class="wrapper">

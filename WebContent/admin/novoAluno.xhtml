@@ -6,7 +6,8 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:stella="http://stella.caelum.com.br/faces2">
 
 <body>
 
@@ -74,23 +75,26 @@
                                     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
                                         <div class="form-group">
                                             <label for="cpf">CPF:</label>
-                                            <p:inputMask id="cpf" value="#{persistStudentBean.student.cpf}" mask="999.999.999-99"
+                                            <p:inputMask id="cpf" value="#{persistStudentBean.student.cpf}"
+                                                         mask="999.999.999-99"
                                                          styleClass="form-control"
                                                          pt:type="number"
-                                                         required="true" requiredMessage="Digite o cpf"/>
+                                                         required="true" requiredMessage="Digite o cpf">
+                                                <stella:validateCPF formatted="true"/>
+                                            </p:inputMask>
                                         </div>
                                     </div>
 
                                     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
                                         <div class="form-group">
                                             <label for="phone">Telefone:</label>
-                                            <p:inputMask id="phone" mask="(99)9999-9999"
+                                            <p:inputMask id="phone" mask="(99)99999-999?9"
                                                          value="#{persistStudentBean.student.phoneNumber}"
                                                          styleClass="form-control"
                                                          pt:type="number"
                                                          required="true"
                                                          requiredMessage="Digite o telefone">
-                                                <f:validateLength minimum="13" maximum="13" />
+                                                <f:validateLength minimum="13" maximum="14"/>
                                             </p:inputMask>
                                         </div>
                                     </div>
