@@ -17,7 +17,7 @@
     </bean>
 
     <context:annotation-config/>
-    <context:component-scan base-package="com.pwufg2015"/>
+    <context:component-scan base-package="com.csufg2016"/>
 
     <!-- Pool declaration -->
     <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
@@ -46,17 +46,16 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
             <list>
-                <value>com.pwufg2015.entities.Person</value>
-                <value>com.pwufg2015.entities.Student</value>
-                <value>com.pwufg2015.entities.Teacher</value>
-                <value>com.pwufg2015.entities.User</value>
-                <value>com.pwufg2015.entities.Role</value>
-                <value>com.pwufg2015.entities.Assignment</value>
-                <value>com.pwufg2015.entities.Course</value>
-                <value>com.pwufg2015.entities.Term</value>
-                <value>com.pwufg2015.entities.TermCourses</value>
-                <value>com.pwufg2015.entities.StudentAssignment</value>
-
+                <value>com.csufg2016.entities.Person</value>
+                <value>com.csufg2016.entities.Student</value>
+                <value>com.csufg2016.entities.Teacher</value>
+                <value>com.csufg2016.entities.User</value>
+                <value>com.csufg2016.entities.Role</value>
+                <value>com.csufg2016.entities.Assignment</value>
+                <value>com.csufg2016.entities.Course</value>
+                <value>com.csufg2016.entities.Term</value>
+                <value>com.csufg2016.entities.TermCourses</value>
+                <value>com.csufg2016.entities.StudentAssignment</value>
             </list>
         </property>
         <property name="hibernateProperties">

@@ -34,7 +34,7 @@
         </sec:authentication-provider>
     </sec:authentication-manager>
 
-    <beans:bean id="loginBean" name="loginBean" class="com.pwufg2015.bean.AuthenticationBean" scope="prototype">
+    <beans:bean id="loginBean" name="loginBean" class="com.csufg2016.bean.AuthenticationBean" scope="prototype">
         <beans:property name="authenticationManager" ref="authenticationManager"/>
     </beans:bean>
 </beans:beans>

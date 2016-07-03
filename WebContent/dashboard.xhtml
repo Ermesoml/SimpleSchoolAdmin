@@ -21,7 +21,12 @@
         <h:panelGroup id="adminDash" rendered="#{request.isUserInRole('ROLE_ADMIN')}">
             <ui:include src="/admin/adminDash.xhtml"/>
         </h:panelGroup>
+        <h:panelGroup id="studentDash" rendered="#{request.isUserInRole('ROLE_STUDENT')}">
 
+        </h:panelGroup>
+        <h:panelGroup id="teacherDash" rendered="#{request.isUserInRole('ROLE_TEACHER')}">
+
+        </h:panelGroup>
         <footer class="app-footer">
             <div class="wrapper">
                 <span class="pull-right">2.0 <a href=""><i class="fa fa-long-arrow-up"></i></a></span> © 2015 Copyright.
