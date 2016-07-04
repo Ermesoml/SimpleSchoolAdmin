@@ -14,9 +14,9 @@ import javax.faces.model.ListDataModel;
 import java.util.ArrayList;
 import java.util.List;
 
-@ManagedBean(name = "manageAssignmentsBean")
+@ManagedBean(name = "teacherCoursesBean")
 @ViewScoped
-public class ManageAssignmentsBean extends MB {
+public class TeacherCoursesBean extends MB {
 
     @ManagedProperty(name = "teacherService", value = "#{TeacherService}")
     private ITeacherBo teacherService;
@@ -29,6 +29,13 @@ public class ManageAssignmentsBean extends MB {
     @PostConstruct
     public void init(){
         courses = teacherService.retrieveTeacherCourses(getUserService().getLoggedUser().getUser().getPersonId());
+    }
+
+    public String gerTermAssignments() {
+
+        flashContainer().put("term-assignment", model.getRowData());
+        return "/professor/gerDisciplinas.xhtml?faces-redirect=true";
+
     }
 
     //region Getter and Setter

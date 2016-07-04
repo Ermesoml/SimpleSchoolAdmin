@@ -19,7 +19,8 @@
 		<div class="container-fluid">
 			<div class="side-body">
 				<div class="page-title">
-					<span class="title">Avaliações</span>
+					<span class="title">Disciplinas lecionadas</span>
+					<div class="description">Gerenciar as disciplinas lecionadas</div>
 				</div>
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -27,7 +28,7 @@
 							<div class="card-body">
 								<h:form id="stdForm" prependId="false">
 									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-									<h:dataTable id="cursostable" value="#{manageAssignmentsBean.model}" var="t"
+									<h:dataTable id="cursostable" value="#{teacherCoursesBean.model}" var="t"
 												 styleClass="datatable table table-striped">
 										<h:column>
 											<f:facet name="header">Disciplina</f:facet>
@@ -36,6 +37,9 @@
 										<h:column>
 											<f:facet name="header">Turma</f:facet>
 											#{t.term.termName}
+										</h:column>
+										<h:column>
+											<h:commandButton value="Gerenciar Atividades" action="#{teacherCoursesBean.gerTermAssignments}" />
 										</h:column>
 									</h:dataTable>
 								</h:form>
