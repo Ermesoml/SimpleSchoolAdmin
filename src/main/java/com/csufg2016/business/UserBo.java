@@ -4,6 +4,8 @@ import com.csufg2016.business.contracts.IUserBo;
 import com.csufg2016.dao.contracts.UserDaoContract;
 import com.csufg2016.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +15,13 @@ public class UserBo implements IUserBo {
 
     @Autowired
     UserDaoContract userDao;
+
+    public User getLoggedUser(){
+
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        return userDao.getByLogin(auth.getName());
+
+    }
 
     @Override
     public void newUser(User user) {

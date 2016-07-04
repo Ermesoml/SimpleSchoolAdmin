@@ -25,7 +25,7 @@ public class Course implements Serializable {
         this.courseId = courseId;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.course", cascade=CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "pk.course", cascade=CascadeType.ALL)
     public Set<TermCourses> getTermCourses() {
         return termCourses;
     }
