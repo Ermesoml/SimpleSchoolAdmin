@@ -1,5 +1,8 @@
 package com.csufg2016.bean;
 
+import com.csufg2016.business.contracts.IUserBo;
+
+import javax.faces.bean.ManagedProperty;
 import javax.faces.context.FacesContext;
 import javax.faces.context.Flash;
 import javax.servlet.http.HttpServletRequest;
@@ -7,6 +10,10 @@ import java.io.Serializable;
 import java.util.Map;
 
 public class MB implements Serializable {
+
+
+    @ManagedProperty(name = "userService", value = "#{UserService}")
+    protected IUserBo userService;
 
     protected Flash flashContainer(){
         return getFacesContext().getExternalContext().getFlash();
@@ -22,5 +29,13 @@ public class MB implements Serializable {
 
     FacesContext getFacesContext() {
         return FacesContext.getCurrentInstance();
+    }
+
+    public IUserBo getUserService() {
+        return userService;
+    }
+
+    public void setUserService(IUserBo userService) {
+        this.userService = userService;
     }
 }

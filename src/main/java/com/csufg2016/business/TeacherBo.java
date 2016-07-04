@@ -1,8 +1,10 @@
 package com.csufg2016.business;
 
 import com.csufg2016.business.contracts.ITeacherBo;
+import com.csufg2016.dao.contracts.CourseDaoContract;
 import com.csufg2016.dao.contracts.TeacherDaoContract;
 import com.csufg2016.entities.Teacher;
+import com.csufg2016.entities.TermCourses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,6 +17,9 @@ public class TeacherBo implements ITeacherBo {
 
     @Autowired
     TeacherDaoContract teacherDao;
+
+    @Autowired
+    CourseDaoContract courseDao;
 
     @Override
     @Transactional(readOnly = false)
@@ -37,6 +42,11 @@ public class TeacherBo implements ITeacherBo {
     @Transactional(readOnly = false)
     public void deleteTeacher(Teacher teacher) {
         teacherDao.delete(teacher);
+    }
+
+    @Override
+    public List<TermCourses> retrieveTeacherCourses(Long teacherId) {
+        return courseDao.getTermCoursesByTeacher(teacherId);
     }
 
     @Override

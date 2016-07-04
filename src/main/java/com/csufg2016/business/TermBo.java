@@ -46,19 +46,15 @@ public class TermBo implements ITermBo {
 
         }
 
-
         term.setTermCourses(termCourses);
 
         newObject(term);
-
 
     }
 
     @Override
     public Term retrieveTermById(long id) {
-
         return termDao.get(id);
-
     }
 
     @Transactional(readOnly = false)

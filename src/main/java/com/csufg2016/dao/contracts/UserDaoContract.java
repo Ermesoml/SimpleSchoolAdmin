@@ -6,7 +6,6 @@ public interface UserDaoContract extends GenericDaoContract<User> {
 
     User getByLogin(String login);
 
-
     @Override
     void add(User user);
 

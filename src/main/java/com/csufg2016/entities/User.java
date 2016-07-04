@@ -39,7 +39,7 @@ public class User implements Serializable {
         this.role = role;
     }
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = false)
     public Person getUser() {
         return user;
     }

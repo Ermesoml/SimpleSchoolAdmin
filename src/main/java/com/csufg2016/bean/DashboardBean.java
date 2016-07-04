@@ -8,5 +8,4 @@ import javax.faces.bean.ViewScoped;
 public class DashboardBean {
 
 
-
 }
