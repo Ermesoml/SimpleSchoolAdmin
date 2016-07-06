@@ -11,9 +11,8 @@ import java.util.Map;
 
 public class MB implements Serializable {
 
-
     @ManagedProperty(name = "userService", value = "#{UserService}")
-    protected IUserBo userService;
+    private IUserBo userService;
 
     protected Flash flashContainer(){
         return getFacesContext().getExternalContext().getFlash();
@@ -31,7 +30,7 @@ public class MB implements Serializable {
         return FacesContext.getCurrentInstance();
     }
 
-    public IUserBo getUserService() {
+    protected IUserBo getUserService() {
         return userService;
     }
 

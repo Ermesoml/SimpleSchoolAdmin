@@ -8,6 +8,7 @@ public interface IUserBo extends BusinessContract<User> {
     User getUserById(long id);
     void updateUser(User user);
     void deleteUser(User user);
-    User getLoggedUser();
+
+    Long getLoggedUser();
 
 }

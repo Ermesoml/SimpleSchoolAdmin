@@ -28,7 +28,7 @@ public class TeacherCoursesBean extends MB {
 
     @PostConstruct
     public void init(){
-        courses = teacherService.retrieveTeacherCourses(getUserService().getLoggedUser().getUser().getPersonId());
+        courses = teacherService.retrieveTeacherCourses(getUserService().getLoggedUser());
     }
 
     public String gerTermAssignments() {
@@ -48,16 +48,16 @@ public class TeacherCoursesBean extends MB {
         return model;
     }
 
+    public void setModel(DataModel<TermCourses> model) {
+        this.model = model;
+    }
+
     public ITeacherBo getTeacherService() {
         return teacherService;
     }
 
     public void setTeacherService(ITeacherBo teacherService) {
         this.teacherService = teacherService;
-    }
-
-    public void setModel(DataModel<TermCourses> model) {
-        this.model = model;
     }
 
     public Teacher getTeacher() {

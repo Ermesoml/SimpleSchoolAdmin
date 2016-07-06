@@ -10,6 +10,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.model.DataModel;
+import javax.faces.model.ListDataModel;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,13 +21,21 @@ public class TeacherAssignmentsBean extends MB {
     @ManagedProperty(name = "assignmentService", value = "#{AssignmentService}")
     private IAssignmentBo assignmentService;
 
-    private transient DataModel<TermCourses> model;
+    private transient DataModel<Assignment> model;
 
     private Assignment assignment = new Assignment();
     private List<Assignment> assignments = new ArrayList<>();
 
     @PostConstruct
-    public void init(){
+    public void init() {
+        TermCourses termCourse = (TermCourses) flashContainer().get("term-courses");
+        assignments = assignmentService.obtainByTermAndCourse(termCourse);
+    }
+
+    public String gerAssignment() {
+
+        flashContainer().put("assignment", model.getRowData());
+        return "/professor/gerAtividade.xhtml?faces-redirect=true";
 
     }
 
@@ -38,11 +47,16 @@ public class TeacherAssignmentsBean extends MB {
         this.assignmentService = assignmentService;
     }
 
-    public DataModel<TermCourses> getModel() {
+    public DataModel<Assignment> getModel() {
+
+        if (model == null) {
+            model = new ListDataModel<>(assignments);
+        }
+
         return model;
     }
 
-    public void setModel(DataModel<TermCourses> model) {
+    public void setModel(DataModel<Assignment> model) {
         this.model = model;
     }
 

@@ -16,10 +16,10 @@ public class UserBo implements IUserBo {
     @Autowired
     UserDaoContract userDao;
 
-    public User getLoggedUser(){
+    public Long getLoggedUser() {
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        return userDao.getByLogin(auth.getName());
+        return userDao.getByLogin(auth.getName()).getUser().getPersonId();
 
     }
 

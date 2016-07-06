@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service("CourseService")
 @Transactional(readOnly = true)
@@ -31,26 +32,17 @@ public class CourseBo implements ICourseBo {
 	@Override
 	@Transactional(readOnly = false)
 	public void updateCourse(Course course) {
-
 		courseDao.update(course);
-
 	}
 
 	@Override
 	@Transactional(readOnly = false)
 	public void deleteCourse(Course course) {
-
 		courseDao.delete(course);
-
 	}
 
 	@Override
 	public List<Course> listAll() {
-
-		List<Course> courses = courseDao.listAll();
-
-		return courses.isEmpty() ? new ArrayList<Course>() : courses;
-
-
+		return Optional.of(courseDao.listAll()).orElse(new ArrayList<>());
 	}
 }
