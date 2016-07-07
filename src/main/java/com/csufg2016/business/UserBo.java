@@ -47,4 +47,14 @@ public class UserBo implements IUserBo {
     public List<User> listAll() {
         return null;
     }
+
+    @Override
+    public void delete(User user) {
+        userDao.delete(user);
+    }
+
+    @Override
+    public void edit(User user) {
+
+    }
 }

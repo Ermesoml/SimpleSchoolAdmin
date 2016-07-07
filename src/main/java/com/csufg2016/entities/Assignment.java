@@ -16,8 +16,9 @@ public class Assignment implements Serializable {
     private Date createDate;
     private Date dueDate;
     private Set<StudentAssignment> studentAssignment = new HashSet<>(0);
-    
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.assignment", cascade=CascadeType.ALL)
+    private TermCourses term;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "pk.assignment", cascade = CascadeType.ALL)
     public Set<StudentAssignment> getStudentAssignment() {
 		return studentAssignment;
 	}
@@ -25,8 +26,6 @@ public class Assignment implements Serializable {
 	public void setStudentAssignment(Set<StudentAssignment> studentAssignment) {
 		this.studentAssignment = studentAssignment;
 	}
-
-	private TermCourses term;
    
     @ManyToOne
     public TermCourses getTerm() {

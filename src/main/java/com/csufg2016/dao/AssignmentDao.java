@@ -19,8 +19,10 @@ public class AssignmentDao extends GenericDao<Assignment> implements AssignmentD
     public List<Assignment> obtainByTermAndCourse(Long termId, Long courseId) {
 
         Criteria criteria = dbSession().createCriteria(Assignment.class);
-        criteria.add(Restrictions.eq("term.termId", termId));
-        criteria.add(Restrictions.eq("course.courseId", courseId));
+        criteria.createAlias("term", "term");
+
+        criteria.add(Restrictions.eq("term.pk.term.termId", termId));
+        criteria.add(Restrictions.eq("term.pk.course.courseId", courseId));
 
         return (List<Assignment>) criteria.list();
 

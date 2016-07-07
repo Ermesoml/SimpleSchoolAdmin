@@ -45,4 +45,14 @@ public class StudentBo implements IStudentBo {
     public List<Student> listAll() {
         return studentDao.listAll();
     }
+
+    @Override
+    public void delete(Student student) {
+        studentDao.delete(student);
+    }
+
+    @Override
+    public void edit(Student student) {
+        studentDao.update(student);
+    }
 }

@@ -19,8 +19,8 @@
         <div class="container-fluid">
             <div class="side-body">
                 <div class="page-title">
-                    <span class="title">Atividades</span>
-                    <div class="description">Gerenciar as atividades da matéria</div>
+                    <span class="title">Disciplinas lecionadas</span>
+                    <div class="description">Gerenciar as disciplinas lecionadas</div>
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -28,34 +28,23 @@
                             <div class="card-body">
                                 <h:form id="stdForm" prependId="false">
                                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                                    <h:dataTable id="cursostable" value="#{teacherAssignmentsBean.model}" var="a"
+                                    <h:dataTable id="cursostable" value="#{teacherCoursesBean.model}" var="t"
                                                  styleClass="datatable table table-striped">
                                         <h:column>
-                                            <f:facet name="header">Atividade</f:facet>
-                                            #{a.type}
+                                            <f:facet name="header">Disciplina</f:facet>
+                                            #{t.course.courseName}
                                         </h:column>
                                         <h:column>
-                                            <f:facet name="header">Data de Criação</f:facet>
-                                            <h:outputText value="#{a.createDate}">
-                                                <f:convertDateTime pattern="dd/MM/yyyy"/>
-                                            </h:outputText>
+                                            <f:facet name="header">Turma</f:facet>
+                                            #{t.term.termName}
                                         </h:column>
                                         <h:column>
-                                            <f:facet name="header">Data Limite</f:facet>
-                                            <h:outputText value="#{a.dueDate}">
-                                                <f:convertDateTime pattern="dd/MM/yyyy"/>
-                                            </h:outputText>
-                                        </h:column>
-                                        <h:column>
-                                            <h:commandButton value="Gerenciar Atividade"
-                                                             action="#{teacherAssignmentsBean.gerAssignment}"/>
+                                            <h:commandButton value="Gerenciar Atividades"
+                                                             action="#{teacherCoursesBean.gerTermAssignments}"/>
                                         </h:column>
                                     </h:dataTable>
                                 </h:form>
                                 <button type="button" class="btn btn-primary">Voltar</button>
-                                <h:button outcome="/admin/novaAtividade.xhtml?faces-redirect=true"
-                                          id="novaAtiv" type="button" styleClass="btn btn-primary"
-                                          value="Nova Atividade"/>
                             </div>
                         </div>
                     </div>

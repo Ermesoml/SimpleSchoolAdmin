@@ -6,4 +6,8 @@ public interface BusinessContract<Entity> {
 
     List<Entity> listAll();
 
+    void delete(Entity entity);
+
+    void edit(Entity entity);
+
 }

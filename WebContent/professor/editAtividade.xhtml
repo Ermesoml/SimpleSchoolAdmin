@@ -24,7 +24,7 @@
         <div class="container-fluid">
             <div class="side-body">
                 <div class="page-title">
-                    <span class="title">Nova Atividade</span>
+                    <span class="title">Editar Atividade</span>
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -58,9 +58,9 @@
                                     </div>
                                     <h:commandButton
                                             id="novoAlun" styleClass="btn btn-primary" value="Cadastrar Atividade"
-                                            action="#{persistAssignmentBean.persistNewAssignment}"/>
+                                            action="#{persistAssignmentBean.editAssignment}"/>
                                 </h:form>
-                                <h:button outcome="/admin/gerAlunos.xhtml?faces-redirect=true"
+                                <h:button outcome="/professor/gerDisciplinas.xhtml?faces-redirect=true"
                                           id="btnBack" type="button" styleClass="btn btn-primary" value="Voltar"/>
 
                             </div>

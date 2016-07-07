@@ -45,4 +45,14 @@ public class CourseBo implements ICourseBo {
 	public List<Course> listAll() {
 		return Optional.of(courseDao.listAll()).orElse(new ArrayList<>());
 	}
+
+	@Override
+	public void delete(Course course) {
+		courseDao.delete(course);
+	}
+
+	@Override
+	public void edit(Course course) {
+		courseDao.update(course);
+	}
 }

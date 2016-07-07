@@ -74,4 +74,14 @@ public class TermBo implements ITermBo {
         return termDao.distinctListAll();
     }
 
+    @Override
+    public void delete(Term term) {
+        termDao.delete(term);
+    }
+
+    @Override
+    public void edit(Term term) {
+        termDao.update(term);
+    }
+
 }

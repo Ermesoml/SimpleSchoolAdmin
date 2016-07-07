@@ -33,8 +33,8 @@ public class TeacherCoursesBean extends MB {
 
     public String gerTermAssignments() {
 
-        flashContainer().put("term-assignment", model.getRowData());
-        return "/professor/gerDisciplinas.xhtml?faces-redirect=true";
+        flashContainer().put("termcourse", model.getRowData());
+        return "/professor/gerAtividades.xhtml?faces-redirect=true";
 
     }
 

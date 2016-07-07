@@ -25,10 +25,11 @@ public class TeacherAssignmentsBean extends MB {
 
     private Assignment assignment = new Assignment();
     private List<Assignment> assignments = new ArrayList<>();
+    private TermCourses termCourse;
 
     @PostConstruct
     public void init() {
-        TermCourses termCourse = (TermCourses) flashContainer().get("term-courses");
+        termCourse = (TermCourses) flashContainer().get("termcourse");
         assignments = assignmentService.obtainByTermAndCourse(termCourse);
     }
 
@@ -36,6 +37,21 @@ public class TeacherAssignmentsBean extends MB {
 
         flashContainer().put("assignment", model.getRowData());
         return "/professor/gerAtividade.xhtml?faces-redirect=true";
+
+    }
+
+    public String newAssignment() {
+
+        Assignment assignment = new Assignment();
+        assignment.setTerm(termCourse);
+        flashContainer().put("assignment", assignment);
+        return "/professor/novaAtividade.xhtml?faces-redirect=true";
+
+    }
+
+    public String editAssignment(Assignment assignment) {
+        flashContainer().put("assignment", assignment);
+        return "/professor/editAtividade.xhtml?faces-redirect=true";
 
     }
 

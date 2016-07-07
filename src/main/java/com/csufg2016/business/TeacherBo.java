@@ -53,4 +53,14 @@ public class TeacherBo implements ITeacherBo {
     public List<Teacher> listAll() {
         return teacherDao.listAll();
     }
+
+    @Override
+    public void delete(Teacher teacher) {
+        teacherDao.delete(teacher);
+    }
+
+    @Override
+    public void edit(Teacher teacher) {
+        teacherDao.update(teacher);
+    }
 }

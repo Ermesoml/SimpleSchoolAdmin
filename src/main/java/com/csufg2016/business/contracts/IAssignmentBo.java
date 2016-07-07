@@ -9,4 +9,6 @@ public interface IAssignmentBo extends BusinessContract<Assignment> {
 
     List<Assignment> obtainByTermAndCourse(TermCourses termCourse);
 
+    void newAssignment(Assignment assignment);
+
 }

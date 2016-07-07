@@ -15,15 +15,30 @@ import java.util.Optional;
 public class AssignmentBo implements IAssignmentBo {
 
     @Autowired
-    AssignmentDaoContract assignment;
+    AssignmentDaoContract assignmentDao;
 
     @Override
     public List<Assignment> obtainByTermAndCourse(TermCourses termCourse) {
-        return assignment.obtainByTermAndCourse(termCourse.getTerm().getTermId(), termCourse.getCourse().getCourseId());
+        return assignmentDao.obtainByTermAndCourse(termCourse.getTerm().getTermId(), termCourse.getCourse().getCourseId());
+    }
+
+    @Override
+    public void newAssignment(Assignment assignment) {
+        assignmentDao.add(assignment);
     }
 
     @Override
     public List<Assignment> listAll() {
-        return Optional.of(assignment.listAll()).orElse(new ArrayList<>());
+        return Optional.of(assignmentDao.listAll()).orElse(new ArrayList<>());
+    }
+
+    @Override
+    public void delete(Assignment assignment) {
+        assignmentDao.delete(assignment);
+    }
+
+    @Override
+    public void edit(Assignment assignment) {
+        assignmentDao.update(assignment);
     }
 }
