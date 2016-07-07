@@ -22,7 +22,9 @@ public class AssignmentDao extends GenericDao<Assignment> implements AssignmentD
         criteria.createAlias("term", "term");
 
         criteria.add(Restrictions.eq("term.pk.term.termId", termId));
-        criteria.add(Restrictions.eq("term.pk.course.courseId", courseId));
+
+        if (courseId != null)
+            criteria.add(Restrictions.eq("term.pk.course.courseId", courseId));
 
         return (List<Assignment>) criteria.list();
 

@@ -23,6 +23,11 @@ public class AssignmentBo implements IAssignmentBo {
     }
 
     @Override
+    public List<Assignment> obtainByTerm(Long termId) {
+        return assignmentDao.obtainByTermAndCourse(termId, null);
+    }
+
+    @Override
     public void newAssignment(Assignment assignment) {
         assignmentDao.add(assignment);
     }
