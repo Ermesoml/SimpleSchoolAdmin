@@ -71,12 +71,12 @@
                     </sec:authorize>
                     <sec:authorize ifAnyGranted="ROLE_TEACHER">
                      <li class="panel panel-default dropdown">
-                            <a data-toggle="collapse" href="#dropdown-user">
+                         <a data-toggle="collapse" href="#dropdown-prof">
                                 <span class="icon fa fa-user"></span>
                                 <span class="title">Professor</span>
                             </a>
 
-                            <div id="dropdown-user" class="panel-collapse collapse">
+                         <div id="dropdown-prof" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <ul class="nav navbar-nav">
                                         <li>
@@ -92,12 +92,12 @@
                     </sec:authorize>
                     <sec:authorize ifAnyGranted="ROLE_STUDENT">
                     	<li class="panel panel-default dropdown">
-                            <a data-toggle="collapse" href="#dropdown-user">
+                            <a data-toggle="collapse" href="#dropdown-student">
                                 <span class="icon fa fa-user"></span>
                                 <span class="title">Aluno</span>
                             </a>
 
-                            <div id="dropdown-user" class="panel-collapse collapse">
+                            <div id="dropdown-student" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <ul class="nav navbar-nav">
                                         <li>
