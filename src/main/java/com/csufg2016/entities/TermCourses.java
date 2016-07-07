@@ -14,18 +14,7 @@ import java.util.Objects;
 public class TermCourses implements Serializable {
 
     private TermCoursesId pk = new TermCoursesId();
-    private Term term;
     private Teacher teacher;
-
-    @Transient
-    public Term getTerm() {
-        term = getPk().getTerm();
-        return term;
-    }
-
-    public void setTerm(Term term) {
-        this.term = term;
-    }
 
     @EmbeddedId
     public TermCoursesId getPk() {
@@ -50,17 +39,17 @@ public class TermCourses implements Serializable {
         return teacher;
     }
 
-    /*@Transient
+    public void setTeacher(Teacher t) {
+        this.teacher = t;
+    }
+
+    @Transient
     public Term getTerm(){
         return getPk().getTerm();
     }
 
     public void setTerm(Term term){
         getPk().setTerm(term);
-    }*/
-    
-    public void setTeacher(Teacher t){
-    	this.teacher = t;
     }
 
     @Override

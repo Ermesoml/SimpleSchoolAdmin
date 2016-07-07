@@ -9,21 +9,18 @@
 
 
 <ui:composition template="/template.xhtml">
-
     <ui:define name="top-bar">
         <ui:include src="/menus/topbar.xhtml"/>
     </ui:define>
-
     <ui:define name="side-bar">
         <ui:include src="/menus/sidebar.xhtml"/>
     </ui:define>
-
     <ui:define name="main-content">
         <div class="container-fluid">
             <div class="side-body">
                 <div class="page-title">
-                    <span class="title">Gerenciar Disciplinas</span>
-                    <div class="description">Cadastros, excluir e gerenciar informações de Disciplinas</div>
+                    <span class="title">Visualisar Atividades</span>
+                    <div class="description">Ver as Atividades Disponiveis</div>
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -31,33 +28,35 @@
                             <div class="card-body">
                                 <h:form id="funcForm" prependId="false">
                                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                                    <h:dataTable id="coursetable" value="#{listCourseBean.model}" var="t"
+                                    <h:dataTable id="coursetable" value="#{studentAssignmentsBean.model}" var="a"
                                                  styleClass="datatable table table-striped">
+
                                         <h:column>
-                                            <f:facet name="header">Id</f:facet>
-                                            #{t.courseId}
+                                            <f:facet name="header">Atividade</f:facet>
+                                            #{a.type}
                                         </h:column>
 
                                         <h:column>
-                                            <f:facet name="header">Disciplina</f:facet>
-                                            #{t.courseName}
+                                            <f:facet name="header">Data de Criação</f:facet>
+                                            <h:outputText value="#{a.createDate}">
+                                                <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                            </h:outputText>
                                         </h:column>
-
                                         <h:column>
-                                            <h:commandButton value="Editar" action="#{listCourseBean.editCourse}"/>
+                                            <f:facet name="header">Data Final</f:facet>
+                                            <h:outputText value="#{a.dueDate}">
+                                                <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                            </h:outputText>
                                         </h:column>
-
-                                        <h:column>
-                                            <h:commandButton value="Excluir" action="#{listCourseBean.deleteCourse}"/>
-                                        </h:column>
-
-
+                                        <!-- <h:column>
+                                             <h:commandButton value="Lançar Notas" action="" />
+                                         </h:column> -->
                                     </h:dataTable>
                                 </h:form>
-                                <button type="button" class="btn btn-primary">Voltar</button>
-                                <h:button outcome="/admin/novaDisciplina.xhtml?faces-redirect=true"
-                                          id="novaDisc" type="button" styleClass="btn btn-primary"
-                                          value="Nova Disciplina"/>
+                                <h:form id="actForm" prependId="false">
+                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                                    <button type="button" class="btn btn-primary">Voltar</button>
+                                </h:form>
                             </div>
                         </div>
                     </div>
@@ -66,11 +65,10 @@
         </div>
         <footer class="app-footer">
             <div class="wrapper">
-                <span class="pull-right">2.0 <a href=""><i class="fa fa-long-arrow-up"></i></a></span> © 2015 Copyright.
+			<span class="pull-right">2.0 <a href=""><i
+                    class="fa fa-long-arrow-up"></i></a></span> © 2015 Copyright.
             </div>
         </footer>
     </ui:define>
 </ui:composition>
-
-
 </html>

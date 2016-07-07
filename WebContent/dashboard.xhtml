@@ -22,7 +22,7 @@
             <ui:include src="/admin/adminDash.xhtml"/>
         </h:panelGroup>
         <h:panelGroup id="studentDash" rendered="#{request.isUserInRole('ROLE_STUDENT')}">
-
+            <ui:include src="/aluno/alunoDash.xhtml"/>
         </h:panelGroup>
         <h:panelGroup id="teacherDash" rendered="#{request.isUserInRole('ROLE_TEACHER')}">
             <ui:include src="/professor/profDash.xhtml"/>

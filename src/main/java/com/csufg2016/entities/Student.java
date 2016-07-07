@@ -18,7 +18,7 @@ public class Student extends Person implements Serializable {
 	private Term termEnrolled;
 	private Set<StudentAssignment> studentAssignment = new HashSet<>(0);
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.student", cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "pk.student", cascade = CascadeType.ALL)
 	public Set<StudentAssignment> getStudentAssignment() {
 		return studentAssignment;
 	}

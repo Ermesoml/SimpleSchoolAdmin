@@ -4,11 +4,8 @@ import com.csufg2016.entities.User;
 
 public interface IUserBo extends BusinessContract<User> {
 
-    void newUser(User user);
-    User getUserById(long id);
-    void updateUser(User user);
-    void deleteUser(User user);
-
     Long getLoggedUser();
+
+    String getLoggedUserName();
 
 }

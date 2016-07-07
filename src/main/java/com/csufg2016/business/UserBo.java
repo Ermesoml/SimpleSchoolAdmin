@@ -16,6 +16,7 @@ public class UserBo implements IUserBo {
     @Autowired
     UserDaoContract userDao;
 
+    @Override
     public Long getLoggedUser() {
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -24,22 +25,10 @@ public class UserBo implements IUserBo {
     }
 
     @Override
-    public void newUser(User user) {
+    public String getLoggedUserName() {
 
-    }
-
-    @Override
-    public User getUserById(long id) {
-        return null;
-    }
-
-    @Override
-    public void updateUser(User user) {
-
-    }
-
-    @Override
-    public void deleteUser(User user) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        return userDao.getByLogin(auth.getName()).getUser().getName();
 
     }
 

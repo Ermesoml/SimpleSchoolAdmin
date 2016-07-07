@@ -4,11 +4,14 @@ import com.csufg2016.business.contracts.IStudentBo;
 import com.csufg2016.business.contracts.ITermBo;
 import com.csufg2016.dao.contracts.StudentDaoContract;
 import com.csufg2016.entities.Student;
+import com.csufg2016.entities.TermCourses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service("StudentService")
 @Transactional(readOnly = true)
@@ -24,6 +27,15 @@ public class StudentBo implements IStudentBo {
     @Transactional(readOnly = false)
     public void enrollStudent(Student student) {
         studentDao.add(student);
+    }
+
+    @Override
+    public List<TermCourses> getEnrolledCourses(Long studentId) {
+
+        Student student = studentDao.get(studentId);
+        return Optional.of(studentDao.getEnrolledCourses(student.getTermEnrolled().getTermId()))
+                .orElse(new ArrayList<>());
+
     }
 
     @Override

@@ -4,10 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:p="http://primefaces.org/ui"
->
+      xmlns:p="http://primefaces.org/ui">
 
 <body>
 
@@ -24,7 +22,9 @@
         <div class="container-fluid">
             <div class="side-body">
                 <div class="page-title">
-                    <span class="title">Editar Atividade</span>
+                    <span class="title">Editar Discplina</span>
+
+                    <div class="description">Editar Disciplina</div>
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -35,32 +35,23 @@
 
                                     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                         <div class="form-group">
-                                            <label for="name">Descrição:</label>
-                                            <h:inputText id="name" value="#{persistAssignmentBean.assignment.type}"
+                                            <label for="name">Nome Disciplina:</label>
+                                            <h:inputText id="name" value="#{persistCourseBean.course.courseName}"
                                                          styleClass="form-control"
                                                          pt:type="text"
                                                          required="true"
-                                                         requiredMessage="Digite a descrição da tarefa"/>
+                                                         requiredMessage="Digite o nome da disciplina"/>
                                         </div>
                                     </div>
-                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                                        <div class="form-group">
-                                            <label for="duedate">Data de Entrega:</label>
-                                            <h:inputText id="duedate"
-                                                         value="#{persistAssignmentBean.assignment.dueDate}"
-                                                         styleClass="form-control"
-                                                         pt:type="date"
-                                                         required="true"
-                                                         requiredMessage="Digite a data de entrega">
-                                                <f:convertDateTime pattern="yyyy-MM-dd"/>
-                                            </h:inputText>
-                                        </div>
+
+                                    <div class="row">
+                                        <h:commandButton
+                                                id="novoFunc" styleClass="btn btn-primary" value="Editar Disciplina"
+                                                action="#{persistCourseBean.editCourse}"/>
                                     </div>
-                                    <h:commandButton
-                                            id="novoAlun" styleClass="btn btn-primary" value="Editar Atividade"
-                                            action="#{persistAssignmentBean.editAssignment}"/>
+
                                 </h:form>
-                                <h:button outcome="/professor/gerDisciplinas.xhtml?faces-redirect=true"
+                                <h:button outcome="/admin/gerDisciplinas.xhtml?faces-redirect=true"
                                           id="btnBack" type="button" styleClass="btn btn-primary" value="Voltar"/>
 
                             </div>
@@ -82,8 +73,6 @@
             </div>
         </footer>
     </ui:define>
-
-
 </ui:composition>
 
 </body>
