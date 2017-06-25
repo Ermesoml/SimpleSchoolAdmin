@@ -17,7 +17,7 @@
     </bean>
 
     <context:annotation-config/>
-    <context:component-scan base-package="com.csufg2016"/>
+    <context:component-scan base-package="br.ufg.inf"/>
 
     <!-- Pool declaration -->
     <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
@@ -46,16 +46,16 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
             <list>
-                <value>com.csufg2016.entities.Person</value>
-                <value>com.csufg2016.entities.Student</value>
-                <value>com.csufg2016.entities.Teacher</value>
-                <value>com.csufg2016.entities.User</value>
-                <value>com.csufg2016.entities.Role</value>
-                <value>com.csufg2016.entities.Assignment</value>
-                <value>com.csufg2016.entities.Course</value>
-                <value>com.csufg2016.entities.Term</value>
-                <value>com.csufg2016.entities.TermCourses</value>
-                <value>com.csufg2016.entities.StudentAssignment</value>
+                <value>br.ufg.inf.entities.Person</value>
+                <value>br.ufg.inf.entities.Student</value>
+                <value>br.ufg.inf.entities.Teacher</value>
+                <value>br.ufg.inf.entities.User</value>
+                <value>br.ufg.inf.entities.Role</value>
+                <value>br.ufg.inf.entities.Assignment</value>
+                <value>br.ufg.inf.entities.Course</value>
+                <value>br.ufg.inf.entities.Term</value>
+                <value>br.ufg.inf.entities.TermCourses</value>
+                <value>br.ufg.inf.entities.StudentAssignment</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -64,8 +64,8 @@
                 <prop key="hibernate.show_sql">false</prop>
                 <prop key="hibernate.connection.characterEncoding">UTF-8</prop>
                 <prop key="hibernate.connection.charSet">UTF-8</prop>
-                <prop key="hibernate.hbm2ddl.auto">update</prop>
-            </props>
+<!--                <prop key="hibernate.hbm2ddl.auto">create</prop>-->
+             </props>
         </property>
     </bean>
 
