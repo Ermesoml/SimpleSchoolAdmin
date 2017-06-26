@@ -366,8 +366,8 @@
 					</configuration>
 					<deployables>
 						<deployable>
-							<groupId>edu.csufg2016</groupId>
-							<artifactId>csproj</artifactId>
+							<groupId>br.inf.ufg</groupId>
+							<artifactId>ssa</artifactId>
 							<type>war</type>
 							<properties>
 								<context>${project.build.finalName}</context>
