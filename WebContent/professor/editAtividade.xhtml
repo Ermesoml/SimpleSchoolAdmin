@@ -57,7 +57,7 @@
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                                        <h:inputHidden value="#{persistAssignmentBean.assignment.uri_pdf}" id="dataFilePdf"/> 
+                                        <h:inputHidden value="#{persistAssignmentBean.assignment.dataUrlPdf}" id="dataFilePdf"/> 
                                         <div class="form-group">
                                             <label for="filePdf">Anexar PDF:</label>
                                             <input id="filePdf" onchange="convertPdfToBase64('filePdf', 'dataFilePdf');" type="file" accept="application/pdf"/>
@@ -65,7 +65,7 @@
                                     </div>
                                     <div class="col-lg-12" id="pdf">
                                         <label for="pdf_content">PDF anexado:</label>
-                                        <object width="100%" height="500" type="application/pdf" data="#{persistAssignmentBean.assignment.uri_pdf}" id="pdf_content">
+                                        <object width="100%" height="500" type="application/pdf" data="#{persistAssignmentBean.assignment.dataUrlPdf}" id="pdf_content">
                                           <p>PDF cannot be displayed.</p>
                                         </object>
                                     </div>
