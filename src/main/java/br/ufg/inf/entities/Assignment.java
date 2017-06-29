@@ -17,6 +17,7 @@ public class Assignment implements Serializable {
     private Date dueDate;
     private Set<StudentAssignment> studentAssignment = new HashSet<>(0);
     private TermCourses term;
+    private String uri_pdf;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "pk.assignment", cascade = CascadeType.ALL)
     public Set<StudentAssignment> getStudentAssignment() {
@@ -69,6 +70,14 @@ public class Assignment implements Serializable {
 
     public void setDueDate(Date dueDate) {
         this.dueDate = dueDate;
+    }
+
+    public String getUri_pdf() {
+        return uri_pdf;
+    }
+
+    public void setUri_pdf(String uri_pdf) {
+        this.uri_pdf = uri_pdf;
     }
 
     @Override
