@@ -15,16 +15,38 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import java.io.IOException;
 
+/**
+ * AuthenticationBean
+ * 
+ * Controlador Responsável por direcionar as chamadas de autenticação
+ * 
+ * 
+ * @author ygors
+ */
 @RequestScoped
 @ManagedBean(name = "authBean")
 public class AuthenticationBean extends MB {
 
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/** The user name. */
     private String userName = null;
+    
+    /** The password. */
     private String password = null;
 
+    /** The authentication manager. */
     @ManagedProperty(value="#{authenticationManager}")
     private AuthenticationManager authenticationManager;
 
+    /**
+     * Realiza o Login do Usuário
+     *
+     * @return the string
+     */
     public String login() {
 
         RequestContext context = RequestContext.getCurrentInstance();
@@ -48,6 +70,9 @@ public class AuthenticationBean extends MB {
 
     }
 
+    /**
+     * Redirect if logged.
+     */
     public void redirectIfLogged(){
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -63,35 +88,75 @@ public class AuthenticationBean extends MB {
 
     }
 
+    /**
+     * Cancel.
+     *
+     * @return the string
+     */
     public String cancel() {
         return null;
     }
 
+    /**
+     * Logout.
+     *
+     * @return the string
+     */
     public String logout(){
         SecurityContextHolder.clearContext();
         return "/login.xhtml";
     }
 
+    /**
+     * Gets the authentication manager.
+     *
+     * @return the authentication manager
+     */
     public AuthenticationManager getAuthenticationManager() {
         return authenticationManager;
     }
 
+    /**
+     * Sets the authentication manager.
+     *
+     * @param authenticationManager the new authentication manager
+     */
     public void setAuthenticationManager(AuthenticationManager authenticationManager) {
         this.authenticationManager = authenticationManager;
     }
 
+    /**
+     * Gets the user name.
+     *
+     * @return the user name
+     */
     public String getUserName() {
         return userName;
     }
 
+    /**
+     * Sets the user name.
+     *
+     * @param userName the new user name
+     */
     public void setUserName(String userName) {
         this.userName = userName;
     }
 
+    /**
+     * Gets the password.
+     *
+     * @return the password
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     * Sets the password.
+     *
+     * @param password the new password
+     */
     public void setPassword(String password) {
         this.password = password;
     }

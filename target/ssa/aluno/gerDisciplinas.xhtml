@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+>
+
+
+<ui:composition template="/template.xhtml">
+    <ui:define name="top-bar">
+        <ui:include src="/menus/topbar.xhtml"/>
+    </ui:define>
+    <ui:define name="side-bar">
+        <ui:include src="/menus/sidebar.xhtml"/>
+    </ui:define>
+    <ui:define name="main-content">
+        <div class="container-fluid">
+            <div class="side-body">
+                <div class="page-title">
+                    <span class="title">Disciplinas do Semestre</span>
+                    <div class="description">Disciplinas que você assiste</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h:form id="stdForm" prependId="false">
+                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                                    <h:dataTable id="cursostable" value="#{studentCoursesBean.model}" var="t"
+                                                 styleClass="datatable table table-striped">
+                                        <h:column>
+                                            <f:facet name="header">Disciplina</f:facet>
+                                            #{t.course.courseName}
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">Professor</f:facet>
+                                            #{t.teacher.name}
+                                        </h:column>
+                                        <h:column>
+                                            <h:commandButton value="Ver Atividades"
+                                                             action="#{studentCoursesBean.gerTermAssignments}"/>
+                                        </h:column>
+                                    </h:dataTable>
+                                </h:form>
+                                <button type="button" class="btn btn-primary">Voltar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="app-footer">
+            <div class="wrapper">
+			<span class="pull-right">2.0 <a href=""><i
+                    class="fa fa-long-arrow-up"></i></a></span> © 2015 Copyright.
+            </div>
+        </footer>
+    </ui:define>
+</ui:composition>
+</html>

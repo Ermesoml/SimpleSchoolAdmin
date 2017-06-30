@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+>
+
+
+<ui:composition template="/template.xhtml">
+    <ui:define name="top-bar">
+        <ui:include src="/menus/topbar.xhtml"/>
+    </ui:define>
+    <ui:define name="side-bar">
+        <ui:include src="/menus/sidebar.xhtml"/>
+    </ui:define>
+
+    <ui:define name="main-content">
+        <div class="container-fluid">
+            <div class="side-body padding-top">
+                <div class="row">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <div class="title">Informações Turma</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row no-margin no-gap">
+                                <h:form id="newFuncForm" prependId="false">
+                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="name">Nome:</label>
+                                            <h:inputText id="name" value="#{editTermBean.term.termName}"
+                                                         styleClass="form-control"
+                                                         pt:type="text"
+                                                         required="true"
+                                                         requiredMessage="Digite a identificação da turma"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="startDate">Data de Início:</label>
+                                            <h:inputText id="startDate" value="#{editTermBean.term.startDate}"
+                                                         styleClass="form-control"
+                                                         pt:type="date"
+                                                         required="true"
+                                                         requiredMessage="Digite a data de início">
+                                                <f:convertDateTime pattern="yyyy-MM-dd"/>
+                                            </h:inputText>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <label for="startDate">Data de Término:</label>
+                                            <h:inputText id="endDate" value="#{editTermBean.term.endDate}"
+                                                         styleClass="form-control"
+                                                         pt:type="date"
+                                                         required="true"
+                                                         requiredMessage="Digite a data de término">
+                                                <f:convertDateTime
+                                                        pattern="yyyy-MM-dd"/>
+                                            </h:inputText>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <h:button outcome="/admin/gerTurmas.xhtml?faces-redirect=true"
+                                                  id="btnBack" type="button" styleClass="btn btn-primary"
+                                                  value="Voltar"/>
+                                        <h:commandButton
+                                                id="editarTurma" styleClass="btn btn-primary" value="Editar Turma"
+                                                action="#{editTermBean.editTerm}"/>
+                                    </div>
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row no-margin-bottom">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <div class="title">Dados Turma</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row no-margin no-gap">
+                                <div class="sub-title">Informações de disciplinas</div>
+                                <h:dataTable id="disciplinastable" value="#{editTermBean.model}" var="d"
+                                             styleClass="table">
+                                    <h:column>
+                                        <f:facet name="header">Disciplina</f:facet>
+                                        #{d.course.courseName}
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">Professor</f:facet>
+                                        #{d.teacher.name}
+                                    </h:column>
+                                </h:dataTable>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="app-footer">
+            <div class="wrapper">
+                <span class="pull-right">2.0 <a href=""><i class="fa fa-long-arrow-up"></i></a></span> © 2015 Copyright.
+            </div>
+        </footer>
+    </ui:define>
+
+
+</ui:composition>
+
+
+</html>

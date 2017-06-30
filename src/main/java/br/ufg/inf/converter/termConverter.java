@@ -10,14 +10,23 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 
+/**
+ * The Class termConverter.
+ * 
+ * Responsável por converter objetos de controlador para objetos de contexto
+ */
 @ManagedBean
 @RequestScoped
 public class termConverter implements Converter {
 
+    /** The term service. */
     @ManagedProperty(name = "termService", value = "#{TermService}")
     private ITermBo termService;
 
 
+    /* (non-Javadoc)
+     * @see javax.faces.convert.Converter#getAsObject(javax.faces.context.FacesContext, javax.faces.component.UIComponent, java.lang.String)
+     */
     @Override
     public Object getAsObject(FacesContext facesContext, UIComponent uiComponent, String s) {
 
@@ -28,6 +37,9 @@ public class termConverter implements Converter {
         return null;
     }
 
+    /* (non-Javadoc)
+     * @see javax.faces.convert.Converter#getAsString(javax.faces.context.FacesContext, javax.faces.component.UIComponent, java.lang.Object)
+     */
     @Override
     public String getAsString(FacesContext facesContext, UIComponent uiComponent, Object o) {
 
@@ -39,10 +51,20 @@ public class termConverter implements Converter {
         return "";
     }
 
+    /**
+     * Gets the term service.
+     *
+     * @return the term service
+     */
     public ITermBo getTermService() {
         return termService;
     }
 
+    /**
+     * Sets the term service.
+     *
+     * @param termService the new term service
+     */
     public void setTermService(ITermBo termService) {
         this.termService = termService;
     }

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+
+<body>
+
+<ui:composition>
+    <div class="container-fluid">
+        <div class="side-body padding-top">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <h:link outcome="/aluno/gerDisciplinas">
+                        <div class="card green summary-inline">
+                            <div class="card-body">
+                                <i class="icon fa fa-graduation-cap fa-4x"></i>
+                                <div class="content">
+                                    <div class="title">Disciplinas</div>
+                                </div>
+                                <div class="clear-both"></div>
+                            </div>
+                        </div>
+                    </h:link>
+                    <h:link outcome="/aluno/gerAtividades">
+                        <div class="card yellow summary-inline">
+                            <div class="card-body">
+                                <i class="icon fa fa-sticky-note fa-4x"></i>
+                                <div class="content">
+                                    <div class="title">Atividades</div>
+                                </div>
+                                <div class="clear-both"></div>
+                            </div>
+                        </div>
+                    </h:link>
+                </div>
+            </div>
+        </div>
+    </div>
+</ui:composition>
+
+</body>
+
+
+</html>

@@ -16,12 +16,19 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * The Class AuthBo.
+ */
 @Service("AuthService")
 public class AuthBo implements IAuthBo, UserDetailsService {
 
+    /** The user dao. */
     @Autowired
     UserDaoContract userDao;
 
+    /* (non-Javadoc)
+     * @see org.springframework.security.core.userdetails.UserDetailsService#loadUserByUsername(java.lang.String)
+     */
     @Override
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
@@ -47,10 +54,22 @@ public class AuthBo implements IAuthBo, UserDetailsService {
         );
     }
 
+    /**
+     * Gets the authorities.
+     *
+     * @param role the role
+     * @return the authorities
+     */
     public Collection<? extends GrantedAuthority> getAuthorities(Long role) {
         return getGrantedAuthorities(getRoles(role));
     }
 
+    /**
+     * Gets the roles.
+     *
+     * @param role the role
+     * @return the roles
+     */
     public List<String> getRoles(Long role) {
 
         List<String> roles = new ArrayList<>();
@@ -65,6 +84,12 @@ public class AuthBo implements IAuthBo, UserDetailsService {
         return roles;
     }
 
+    /**
+     * Gets the granted authorities.
+     *
+     * @param roles the roles
+     * @return the granted authorities
+     */
     public static List<GrantedAuthority> getGrantedAuthorities(List<String> roles) {
         List<GrantedAuthority> authorities = new ArrayList<>();
 

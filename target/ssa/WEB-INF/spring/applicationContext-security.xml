@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+        xmlns:sec="http://www.springframework.org/schema/security"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:beans="http://www.springframework.org/schema/beans"
+        xsi:schemaLocation="
+     http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security-4.0.xsd">
+
+    <!-- Enable method level Spring Security by annotations  -->
+    <sec:global-method-security pre-post-annotations="enabled" />
+    <sec:http auto-config="true" use-expressions="true">
+
+        <sec:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
+        <sec:intercept-url pattern="/aluno/**" access="hasRole('ROLE_STUDENT')" />
+        <sec:intercept-url pattern="/professor/**" access="hasRole('ROLE_TEACHER')" />
+
+        <sec:intercept-url pattern="/javax.faces.resource/**" access="permitAll"/>
+        <sec:intercept-url pattern="/login.xhtml" access="permitAll"/>
+        <sec:intercept-url pattern="/dashboard.xhtml" access="hasAnyRole('ROLE_TEACHER,ROLE_ADMIN,ROLE_STUDENT')"/>
+
+        <!-- Define login page for Spring Security -->
+        <sec:form-login login-page="/login.xhtml"/>
+
+        <!-- Define logout properties for Spring Security -->
+        <sec:logout invalidate-session="true" delete-cookies="true" logout-success-url="/"/>
+    </sec:http>
+
+    <sec:authentication-manager alias="authenticationManager">
+        <sec:authentication-provider user-service-ref="AuthService">
+            <sec:password-encoder hash="bcrypt"/>
+        </sec:authentication-provider>
+    </sec:authentication-manager>
+
+    <beans:bean id="loginBean" name="loginBean" class="br.ufg.inf.bean.AuthenticationBean" scope="prototype">
+        <beans:property name="authenticationManager" ref="authenticationManager"/>
+    </beans:bean>
+</beans:beans>

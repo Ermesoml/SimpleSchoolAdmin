@@ -13,23 +13,44 @@ import javax.faces.model.ListDataModel;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The Class ListCourseBean.
+ */
 @ManagedBean(name = "listCourseBean")
 @ViewScoped
 public class ListCourseBean extends MB {
 
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -5979888829842994241L;
+
+	/** The course service. */
     @ManagedProperty(name = "courseService", value = "#{CourseService}")
     private ICourseBo courseService;
 
+    /** The model. */
     private transient DataModel<Course> model;
 
+    /** The course. */
     private Course course = new Course();
+    
+    /** The courses. */
     private List<Course> courses = new ArrayList<>();
 
+    /**
+     * Inits the.
+     */
     @PostConstruct
     public void init(){
         courses = courseService.listAll();
     }
 
+    /**
+     * Edits the course.
+     *
+     * @return the string
+     */
     public String editCourse() {
 
         flashContainer().put("course", model.getRowData());
@@ -38,6 +59,9 @@ public class ListCourseBean extends MB {
 
     }
 
+    /**
+     * Delete course.
+     */
     public void deleteCourse(){
 
         try {
@@ -51,6 +75,11 @@ public class ListCourseBean extends MB {
 
     }
 
+    /**
+     * Gets the model.
+     *
+     * @return the model
+     */
     //region Getter and Setter
     public DataModel<Course> getModel() {
 
@@ -62,30 +91,65 @@ public class ListCourseBean extends MB {
     }
 
 
+    /**
+     * Gets the course.
+     *
+     * @return the course
+     */
     public Course getCourse() {
         return course;
     }
 
+    /**
+     * Sets the course.
+     *
+     * @param course the new course
+     */
     public void setCourse(Course course) {
         this.course = course;
     }
 
+    /**
+     * Sets the model.
+     *
+     * @param model the new model
+     */
     public void setModel(DataModel<Course> model) {
         this.model = model;
     }
 
+    /**
+     * Gets the courses.
+     *
+     * @return the courses
+     */
     public List<Course> getCourses() {
         return courses;
     }
 
+    /**
+     * Sets the courses.
+     *
+     * @param courses the new courses
+     */
     public void setCourses(List<Course> courses) {
         this.courses = courses;
     }
 
+    /**
+     * Gets the course service.
+     *
+     * @return the course service
+     */
     public ICourseBo getCourseService() {
         return courseService;
     }
 
+    /**
+     * Sets the course service.
+     *
+     * @param courseService the new course service
+     */
     public void setCourseService(ICourseBo courseService) {
         this.courseService = courseService;
     }

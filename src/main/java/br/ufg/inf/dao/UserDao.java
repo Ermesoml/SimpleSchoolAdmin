@@ -10,20 +10,29 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * The Class UserDao.
+ */
 @Repository
 @Transactional
 public class UserDao extends GenericDao<User> implements UserDaoContract {
 
+    /**
+     * Instantiates a new user dao.
+     */
     protected UserDao() {
         super(User.class);
     }
 
+    /* (non-Javadoc)
+     * @see br.ufg.inf.dao.contracts.UserDaoContract#getByLogin(java.lang.String)
+     */
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public User getByLogin(String login) {
 
         Criteria criteria = super.dbSession().createCriteria(User.class);
-        List userRows;
+        List<?> userRows;
 
         criteria.add(Restrictions.eq("userName", login));
 

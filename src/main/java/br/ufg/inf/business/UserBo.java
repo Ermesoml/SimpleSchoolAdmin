@@ -10,12 +10,19 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * The Class UserBo.
+ */
 @Service("UserService")
 public class UserBo implements IUserBo {
 
+    /** The user dao. */
     @Autowired
     UserDaoContract userDao;
 
+    /* (non-Javadoc)
+     * @see br.ufg.inf.business.contracts.IUserBo#getLoggedUser()
+     */
     @Override
     public Long getLoggedUser() {
 
@@ -24,6 +31,9 @@ public class UserBo implements IUserBo {
 
     }
 
+    /* (non-Javadoc)
+     * @see br.ufg.inf.business.contracts.IUserBo#getLoggedUserName()
+     */
     @Override
     public String getLoggedUserName() {
 
@@ -32,16 +42,25 @@ public class UserBo implements IUserBo {
 
     }
 
+    /* (non-Javadoc)
+     * @see br.ufg.inf.business.contracts.BusinessContract#listAll()
+     */
     @Override
     public List<User> listAll() {
         return null;
     }
 
+    /* (non-Javadoc)
+     * @see br.ufg.inf.business.contracts.BusinessContract#delete(java.lang.Object)
+     */
     @Override
     public void delete(User user) {
         userDao.delete(user);
     }
 
+    /* (non-Javadoc)
+     * @see br.ufg.inf.business.contracts.BusinessContract#edit(java.lang.Object)
+     */
     @Override
     public void edit(User user) {
 

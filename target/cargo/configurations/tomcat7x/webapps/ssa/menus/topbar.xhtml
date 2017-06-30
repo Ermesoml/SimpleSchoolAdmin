@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+>
+
+
+<body>
+<ui:composition>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-expand-toggle">
+                    <i class="fa fa-bars icon"></i>
+                </button>
+                <ol class="breadcrumb navbar-breadcrumb">
+                    <li class="active">Bem vindo, #{barsBean.loggedUser}</li>
+                </ol>
+                <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
+                    <i class="fa fa-th icon"></i>
+                </button>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown profile">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                       aria-expanded="false">#{barsBean.loggedUsername}<span class="caret"></span></a>
+                    <ul class="dropdown-menu animated fadeInDown">
+                        <li>
+                            <div class="profile-info">
+                                <h4 class="username">#{barsBean.loggedUsername}</h4>
+                                <div class="btn-group margin-bottom-2x" role="group">
+                                    <h:form id="loginForm" styleClass="login" prependId="false">
+                                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                                    <p:commandButton value="Sair" action="#{authBean.logout}" styleClass="btn btn-default"
+                                                     icon="fa fa-sign-out"
+                                                     />
+                                    </h:form>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</ui:composition>
+</body>
+
+
+</html>

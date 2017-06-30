@@ -1,0 +1,1272 @@
+$color-white: #fff;
+$color-light-grey-1: #fdfdfd;
+$color-light-grey: #f9f9f9;
+$color-lighter-grey: #f0f0f0;
+$color-grey: #eaeaea;
+$color-grey-level1: #e4e4e4;
+$color-grey-level2: #ddd;
+$color-grey-level3: #ccc;
+$color-dark-grey: #2d2d2d;
+$color-dark-grey-l: #393838;
+$color-black: #1d1d1d;
+$color-orange-base: #d55002; // Main Primary color */
+$color-orange-clear: #ff9353;
+$color-orange-light: #f97323;
+$color-brown: #ae4100;
+$color-dark-brown: #843100;
+$color-blue-base: #0d448c; // Main Secondary color (1) */
+$color-light-blue: #4271ad;
+$color-navy-blue: #235ba3;
+$color-dark-blue: #083772;
+$color-petrol-blue: #042857;
+$color-green-base: #38b702; // Main Secondary color (2) */
+$color-light-green: #75dd48;
+$color-lime-green: #55d61e;
+$color-dark-green: #2d9500;
+$color-darker-green: #227200;
+$color-clearer-dark-blue: #9eaabd;
+$color-clear-dark-blue: #73849d;
+$color-dark-blue-1: #22a7f0;
+$color-dark-blue-hover: #363c46;
+$color-dark-black: #232323;
+$color-clear-red: #ffb8aa;
+$color-lightest-red: #fb927d;
+$color-light-red: #19b5fe;
+$color-red: #fa2a00;
+$color-darkest-red: #7c1a06;
+$color-light-green: #88f159;
+$color-clear-yellow: #ffe5a2;
+$color-yellow: #fabe28;
+$color-dark-yellow: #ffb400;
+$color-darkest-yellow: #85630f;
+$color-bgreen: #88c100;
+$color-clear-green-sea: #99e9d9;
+$color-green-sea: #1abc9c;
+$color-dark-green-sea: #16a085;
+$color-darkest-green-sea: #006551;
+$color-clear-blue: #91d5fb;
+$color-blue: #22a7f0;
+$color-darkest-blue: #09486b;
+$color-light-gblue: #00b9bd;
+$color-gblue: #007e80;
+$color-dark-gblue: #004853;
+$theme-menu-bg-color: #d4d4d4;
+$theme-success-color: #00b16a;
+$color-blue: #22a7f0;
+$theme-danger-color: $color-red;
+.flat-orange
+{
+    background-color: $color-light-grey;
+    a
+    {
+        color: $color-dark-grey;
+    }
+    a:hover
+    {
+        color: $color-darkest-blue;
+    }
+    .app-footer
+    {
+        opacity: .7;
+        color: $color-black;
+    }
+    // Navbar
+    .navbar
+    {
+        border-bottom: 0;
+        background-color: $color-black;
+        box-shadow: 0 1px 1px rgba(0,0,0,.1);
+        & > .container-fluid
+        {
+            background-color: $color-black;
+        }
+        .navbar-header
+        {
+            .navbar-brand
+            {
+                color: $color-light-grey;
+            }
+            .navbar-expand-toggle
+            {
+                color: $color-white;
+            }
+            .navbar-right-expand-toggle
+            {
+                color: $color-white;
+            }
+        }
+        .navbar-breadcrumb
+        {
+            li
+            {
+                color: $color-white;
+                a
+                {
+                    color: $color-white;
+                }
+            }
+        }
+        .navbar-nav
+        {
+            & > li
+            {
+                background-color: $color-dark-grey;
+
+                & > a
+                {
+                    color: $color-white;
+                }
+            }
+            & > li:hover
+            {
+                & > a
+                {
+                    color: $color-orange-light;
+                }
+            }
+            & > li.open
+            {
+                & > a
+                {
+                    color: $color-red;
+                    background-color: transparent;
+                }
+            }
+            & > li.danger
+            {
+                & > a
+                {
+                    color: $color-white;
+                    background-color: $theme-danger-color;
+                }
+            }
+            .dropdown-menu
+            {
+                border-color: $color-black;
+                background-color: $color-light-grey;
+                .title
+                {
+                    background-color: $color-white;
+                    .badge
+                    {
+                        background-color: $color-black;
+                    }
+                }
+            }
+            .dropdown-menu.danger
+            {
+                border-color: $theme-danger-color;
+                .title
+                {
+                    color: $color-white;
+                    background-color: $theme-danger-color;
+                    .badge
+                    {
+                        color: $theme-danger-color;
+                        background-color: $color-white;
+                    }
+                }
+            }
+            .dropdown.profile
+            {
+                .dropdown-menu
+                {
+                    border-color: $color-orange-clear;
+                    li.profile-img
+                    {
+                        background-color: $color-orange-clear;
+                    }
+                }
+            }
+            .dropdown.profile.open
+            {
+                & > a
+                {
+                    color: $color-white;
+                    background-color: $color-orange-clear;
+                }
+            }
+        }
+    }
+    // Menu Bar
+    .side-menu
+    {
+        background-color: $color-dark-grey;
+        .navbar-header
+        {
+            background-color: $color-dark-grey;
+            .navbar-brand
+            {
+                color: $color-orange-light;
+            }
+        }
+        .navbar-nav
+        {
+            width: 100%;
+        }
+        .navbar
+        {
+            border-bottom: 0;
+            background-color: $color-grey;
+            -webkit-box-shadow: none;
+               -moz-box-shadow: none;
+                    box-shadow: none;
+            li
+            {
+                & > a
+                {
+                    color: $color-white;
+                }
+            }
+            li.active
+            {
+                & > a
+                {
+                    border-right: 2px solid $color-orange-base;
+                    background-color: $color-orange-clear;
+                }
+            }
+            & > li:hover
+            {
+                & > a
+                {
+                    color: $color-white;
+                    background-color: $color-red;
+                }
+            }
+            li.dropdown
+            {
+                background-color: $color-dark-grey;
+                & > .panel-collapse
+                {
+                    background-color: $color-dark-grey-l;
+                }
+                .panel-body
+                {
+                    padding: 0;
+                }
+            }
+            li:hover
+            {
+                // background-color: rgba(0,0,0,0.1);
+            }
+        }
+    }
+    /* small screen */
+    @media (max-width: 768px)
+    {
+        .navbar
+        {
+            .navbar-right
+            {
+                background-color: $color-black;
+                .open
+                {
+                    .dropdown-menu
+                    {
+                    }
+                }
+            }
+        }
+    }
+    // Card
+    .card.red
+    {
+        color: $color-white;
+        background-color: $color-red;
+    }
+    .card.yellow
+    {
+        color: $color-white;
+        background-color: $color-dark-yellow;
+    }
+    .card.green
+    {
+        color: $color-white;
+        background-color: $color-green-sea;
+    }
+    .card.blue
+    {
+        color: $color-white;
+        background-color: $color-blue;
+    }
+    .card.dark
+    {
+        color: $color-white;
+        background-color: $color-black;
+    }
+    .card.red,
+    .card.yellow,
+    .card.green,
+    .card.blue,
+    .card.dark
+    {
+        border: 0;
+        .card-header
+        {
+            border-bottom: 0;
+            .title
+            {
+                color: $color-white;
+            }
+        }
+    }
+    .card
+    {
+        border: 0 solid $color-grey-level1;
+        box-shadow: 0 1px 1px rgba(0,0,0,.1);
+        .card-header
+        {
+            border-bottom: 1px solid $color-grey-level1;
+            .title
+            {
+                color: $color-black;
+            }
+        }
+        .card-body
+        {
+            .sub-title
+            {
+                border-bottom: 1px solid $color-grey;
+            }
+        }
+        .card-header.no-border
+        {
+            border-bottom: 0;
+        }
+        .card-jumbotron
+        {
+            background-color: $color-grey;
+        }
+    }
+    // Jumbotron Color
+    .card.primary
+    {
+        .card-jumbotron
+        {
+            color: $color-white;
+            background-color: $color-black;
+        }
+    }
+    .card.profile
+    {
+        .card-footer
+        {
+            border-top: 1px solid $color-light-grey;
+        }
+    }
+    .card.summary-inline.red:hover
+    {
+        background-color: $color-darkest-red;
+    }
+    .card.summary-inline.yellow:hover
+    {
+        background-color: $color-darkest-yellow;
+    }
+    .card.summary-inline.green:hover
+    {
+        background-color: $color-darkest-green-sea;
+    }
+    .card.summary-inline.blue:hover
+    {
+        background-color: $color-black;
+    }
+    .card.summary-inline.dark:hover
+    {
+        background-color: $color-darkest-blue;
+    }
+    .card.card-success
+    {
+        .card-header
+        {
+            background-color: $color-green-sea;
+            .title
+            {
+                color: $color-white;
+            }
+        }
+    }
+    .card.card-info
+    {
+        .card-header
+        {
+            background-color: $color-blue;
+            .title
+            {
+                color: $color-white;
+            }
+        }
+    }
+    // Panel
+    .panel.panel-default
+    {
+        border: 1px solid $color-grey;
+        .panel-heading
+        {
+            border-bottom: 1px solid $color-grey;
+            background-color: $color-lighter-grey;
+        }
+    }
+    .panel.panel-primary
+    {
+        border: 1px solid $color-black;
+        .panel-heading
+        {
+            color: $color-white;
+            border-bottom: 1px solid $color-black;
+            background-color: $color-clear-dark-blue;
+        }
+    }
+    .panel.panel-success
+    {
+        border: 1px solid $color-green-sea;
+        .panel-heading
+        {
+            color: $color-darkest-green-sea;
+            border-bottom: 1px solid $color-green-sea;
+            background-color: $color-clear-green-sea;
+        }
+    }
+    .panel.panel-info
+    {
+        border: 1px solid $color-blue;
+        .panel-heading
+        {
+            color: $color-darkest-blue;
+            border-bottom: 1px solid $color-blue;
+            background-color: $color-clear-blue;
+        }
+    }
+    .panel.panel-warning
+    {
+        border: 1px solid $color-yellow;
+        .panel-heading
+        {
+            color: $color-darkest-yellow;
+            border-bottom: 1px solid $color-yellow;
+            background-color: $color-clear-yellow;
+        }
+    }
+    .panel.panel-danger
+    {
+        border: 1px solid $color-lightest-red;
+        .panel-heading
+        {
+            color: $color-darkest-red;
+            border-bottom: 1px solid $color-lightest-red;
+            background-color: $color-clear-red;
+        }
+    }
+    // Panel with Fresh color
+    .panel.fresh-color.panel-primary
+    {
+        border: 1px solid $color-black;
+        .panel-heading
+        {
+            color: $color-white;
+            border-bottom: 1px solid $color-black;
+            background-color: $color-black;
+        }
+    }
+    .panel.fresh-color.panel-success
+    {
+        border: 1px solid $color-green-sea;
+        .panel-heading
+        {
+            color: $color-white;
+            border-bottom: 1px solid $color-green-sea;
+            background-color: $color-green-sea;
+        }
+    }
+    .panel.fresh-color.panel-info
+    {
+        border: 1px solid $color-blue;
+        .panel-heading
+        {
+            color: $color-white;
+            border-bottom: 1px solid $color-blue;
+            background-color: $color-blue;
+        }
+    }
+    .panel.fresh-color.panel-warning
+    {
+        border: 1px solid $color-yellow;
+        .panel-heading
+        {
+            color: $color-white;
+            border-bottom: 1px solid $color-yellow;
+            background-color: $color-yellow;
+        }
+    }
+    .panel.fresh-color.panel-danger
+    {
+        border: 1px solid $color-red;
+        .panel-heading
+        {
+            color: $color-white;
+            border-bottom: 1px solid $color-red;
+            background-color: $color-red;
+        }
+    }
+    // Button
+    .btn.btn-default
+    {
+        border-color: $color-grey;
+        background-color: $color-lighter-grey;
+    }
+    .btn.btn-default:hover
+    {
+        background-color: $color-grey;
+    }
+    .btn.btn-primary
+    {
+        color: $color-white;
+        border-color: $color-black;
+        background-color: $color-black;
+        &:hover
+        {
+            color: $color-black;
+            border-color: $color-orange-base;
+            background-color: $color-orange-light;
+        }
+    }
+    .btn.btn-success
+    {
+        color: $color-white;
+        border-color: $color-green-sea;
+        background-color: $color-green-sea;
+    }
+    .btn.btn-warning
+    {
+        color: $color-white;
+        border-color: $color-yellow;
+        background-color: $color-yellow;
+    }
+    .btn.btn-info
+    {
+        color: $color-white;
+        border-color: $color-blue;
+        background-color: $color-blue;
+    }
+    .btn.btn-danger
+    {
+        color: $color-white;
+        border-color: $color-red;
+        background-color: $color-red;
+    }
+    .btn.btn-link
+    {
+        color: $color-black;
+    }
+    // Progress Bar
+    .progress
+    {
+        .progress-bar
+        {
+            color: $color-white;
+            background-color: $color-black;
+        }
+        .progress-bar.progress-bar-success
+        {
+            background-color: $color-green-sea;
+        }
+        .progress-bar.progress-bar-info
+        {
+            background-color: $color-blue;
+        }
+        .progress-bar.progress-bar-warning
+        {
+            background-color: $color-yellow;
+        }
+        .progress-bar.progress-bar-danger
+        {
+            background-color: $color-red;
+        }
+    }
+    // Font Color
+    .color-white
+    {
+        color: $color-white;
+    }
+    // Pagination
+    .pagination
+    {
+        & > li
+        {
+            & > a
+            {
+                color: $color-black;
+            }
+        }
+        .active
+        {
+            & > a,
+            & > a:focus,
+            & > a:hover,
+            span,
+            & > span:focus,
+            & > span:hover
+            {
+                color: $color-white;
+                border-color: $color-black;
+                background-color: $color-black;
+            }
+        }
+    }
+    // Modal
+    .modal.modal-primary
+    {
+        .modal-header
+        {
+            color: $color-white;
+            background-color: $color-black;
+        }
+    }
+    .modal.modal-success
+    {
+        .modal-header
+        {
+            color: $color-white;
+            background-color: $color-green-base;
+        }
+    }
+    .modal.modal-info
+    {
+        .modal-header
+        {
+            color: $color-white;
+            background-color: $color-orange-base;
+        }
+    }
+    .modal.modal-warning
+    {
+        .modal-header
+        {
+            color: $color-white;
+            background-color: $color-yellow;
+        }
+    }
+    .modal.modal-danger
+    {
+        .modal-header
+        {
+            color: $color-white;
+            background-color: $color-red;
+        }
+    }
+    // Alert
+    .alert.alert-success
+    {
+        color: $color-darkest-green-sea;
+        border-color: $color-green-sea;
+        background-color: $color-clear-green-sea;
+        .alert-link
+        {
+            text-decoration: underline;
+
+            color: $color-darkest-green-sea;
+        }
+        .btn-link
+        {
+            color: $color-darkest-green-sea;
+        }
+    }
+    .alert.alert-info
+    {
+        color: $color-darkest-blue;
+        border-color: $color-blue;
+        background-color: $color-clear-blue;
+        .alert-link
+        {
+            text-decoration: underline;
+
+            color: $color-darkest-blue;
+        }
+        .btn-link
+        {
+            color: $color-darkest-blue;
+        }
+    }
+    .alert.alert-warning
+    {
+        color: $color-darkest-yellow;
+        border-color: $color-yellow;
+        background-color: $color-clear-yellow;
+        .alert-link
+        {
+            text-decoration: underline;
+
+            color: $color-darkest-yellow;
+        }
+        .btn-link
+        {
+            color: $color-darkest-yellow;
+        }
+    }
+    .alert.alert-danger
+    {
+        color: $color-darkest-red;
+        border-color: $color-lightest-red;
+        background-color: $color-clear-red;
+        .alert-link
+        {
+            text-decoration: underline;
+
+            color: $color-darkest-red;
+        }
+        .btn-link
+        {
+            color: $color-darkest-red;
+        }
+    }
+    .alert.fresh-color
+    {
+        color: $color-white;
+        .alert-link
+        {
+            text-decoration: underline;
+
+            color: $color-white;
+        }
+        .btn-link
+        {
+            color: $color-white;
+        }
+    }
+    .alert.fresh-color.alert-success
+    {
+        background-color: $color-green-sea;
+    }
+    .alert.fresh-color.alert-info
+    {
+        background-color: $color-blue;
+    }
+    .alert.fresh-color.alert-warning
+    {
+        background-color: $color-yellow;
+    }
+    .alert.fresh-color.alert-danger
+    {
+        border-color: $color-red;
+        background-color: $color-red;
+    }
+    // List Group
+    .list-group
+    {
+        .list-group-item.active
+        {
+            color: $color-white;
+            border-color: $color-black;
+            background-color: $color-black;
+            .badge
+            {
+                color: $color-black;
+            }
+        }
+        .list-group-item.list-group-item-success
+        {
+            color: $color-darkest-green-sea;
+            border-color: $color-clear-green-sea;
+            background-color: $color-clear-green-sea;
+            .badge
+            {
+                color: $color-green-sea;
+                background-color: $color-white;
+            }
+        }
+        .list-group-item.list-group-item-info
+        {
+            color: $color-darkest-blue;
+            border-color: $color-clear-blue;
+            background-color: $color-clear-blue;
+            .badge
+            {
+                color: $color-blue;
+                background-color: $color-white;
+            }
+        }
+        .list-group-item.list-group-item-warning
+        {
+            color: $color-darkest-yellow;
+            border-color: $color-clear-yellow;
+            background-color: $color-clear-yellow;
+            .badge
+            {
+                color: $color-yellow;
+                background-color: $color-white;
+            }
+        }
+        .list-group-item.list-group-item-danger
+        {
+            color: $color-darkest-red;
+            border-color: $color-clear-red;
+            background-color: $color-clear-red;
+            .badge
+            {
+                color: $color-red;
+                background-color: $color-white;
+            }
+        }
+    }
+    // Bootstrap Switch
+    .bootstrap-switch
+    {
+        border-color: $color-grey;
+        .bootstrap-switch-primary
+        {
+            background-color: $color-black;
+        }
+    }
+    // Table
+    .table
+    {
+        .active
+        {
+            td,
+            th
+            {
+                background-color: $color-grey;
+            }
+        }
+        .success
+        {
+            color: $color-darkest-green-sea;
+            td,
+            th
+            {
+                background-color: $color-clear-green-sea;
+            }
+        }
+        .info
+        {
+            color: $color-darkest-blue;
+            td,
+            th
+            {
+                background-color: $color-clear-blue;
+            }
+        }
+        .warning
+        {
+            color: $color-darkest-yellow;
+            td,
+            th
+            {
+                background-color: $color-clear-yellow;
+            }
+        }
+        .danger
+        {
+            color: $color-darkest-red;
+            td,
+            th
+            {
+                background-color: $color-clear-red;
+            }
+        }
+        & > tbody,
+        & > tfoot
+        {
+            & > tr
+            {
+                & > td,
+                & > th
+                {
+                    border-color: $color-grey;
+                }
+            }
+        }
+        & > thead
+        {
+            & > tr
+            {
+                & > th
+                {
+                    border-color: $color-grey;
+                }
+            }
+        }
+    }
+    .table.table-striped
+    {
+        & > tbody
+        {
+            & > tr:nth-of-type(odd)
+            {
+                background-color: $color-light-grey-1;
+            }
+        }
+    }
+    // Login page
+    .login-box
+    {
+        .login-form
+        {
+            .login-header
+            {
+                color: $color-white;
+            }
+            .login-body
+            {
+                background-color: $color-white;
+            }
+        }
+        input
+        {
+            border: 1px solid $color-light-grey;
+            background-color: $color-light-grey;
+        }
+        .login-footer
+        {
+            a
+            {
+                color: $color-white;
+            }
+            a:hover
+            {
+                text-decoration: underline;
+
+                color: $color-white;
+            }
+        }
+    }
+    // Badge
+    .badge.primary
+    {
+        background-color: $color-black;
+    }
+    .badge.success
+    {
+        background-color: $color-green-sea;
+    }
+    .badge.info
+    {
+        background-color: $color-blue;
+    }
+    .badge.warning
+    {
+        background-color: $color-yellow;
+    }
+    .badge.danger
+    {
+        background-color: $color-red;
+    }
+    // Tabs
+    .nav-tabs
+    {
+        background-color: $color-grey;
+        & > li
+        {
+            & > a:hover
+            {
+                background-color: $color-grey;
+            }
+        }
+        & > li.active
+        {
+            & > a:hover
+            {
+                background-color: $color-white;
+            }
+        }
+    }
+    // Overide BS3 Tab for Position
+    .tabs-below > .nav-tabs
+    {
+        border-top: 1px solid $color-grey-level1;
+    }
+    .tabs-below > .nav-tabs > li > a:hover,
+    .tabs-below > .nav-tabs > li > a:focus
+    {
+        border-top-color: $color-grey-level1;
+        border-bottom-color: transparent;
+    }
+    .tabs-below > .nav-tabs > .active > a,
+    .tabs-below > .nav-tabs > .active > a:hover,
+    .tabs-below > .nav-tabs > .active > a:focus
+    {
+        border-color: transparent $color-grey-level1 $color-grey-level1 $color-grey-level1;
+    }
+    .tabs-left > .nav-tabs
+    {
+        border-right: 1px solid $color-grey-level1;
+    }
+    .tabs-left > .nav-tabs > li > a:hover,
+    .tabs-left > .nav-tabs > li > a:focus
+    {
+        border-color: $color-grey-level1 $color-grey-level1 $color-grey-level1 $color-grey-level1;
+    }
+    .tabs-left > .nav-tabs .active > a,
+    .tabs-left > .nav-tabs .active > a:hover,
+    .tabs-left > .nav-tabs .active > a:focus
+    {
+        border-color: $color-grey-level1 transparent $color-grey-level1 $color-grey-level1;
+
+        *border-right-color: $color-white;
+    }
+    .tabs-right > .nav-tabs
+    {
+        border-left: 1px solid $color-grey-level1;
+    }
+    .tabs-right > .nav-tabs > li > a:hover,
+    .tabs-right > .nav-tabs > li > a:focus
+    {
+        border-color: $color-grey-level1 $color-grey-level1 $color-grey-level1 $color-grey-level1;
+    }
+    .tabs-right > .nav-tabs .active > a,
+    .tabs-right > .nav-tabs .active > a:hover,
+    .tabs-right > .nav-tabs .active > a:focus
+    {
+        border-color: $color-grey-level1 $color-grey-level1 $color-grey-level1 transparent;
+
+        *border-left-color: $color-white;
+    }
+    // Step
+    .step
+    {
+        .nav-tabs
+        {
+            background-color: $color-white;
+        }
+    }
+    // Tab Step Horizontal
+    .step
+    {
+        .nav-tabs
+        {
+            & > li
+            {
+                border: 1px solid $color-grey-level1;
+                border-right: 0;
+            }
+            & > li:after
+            {
+                border-top: 15px solid transparent;
+                border-bottom: 15px solid transparent;
+                border-left: 15px solid $color-white;
+            }
+            & > li:before
+            {
+                border-top: 16px solid transparent;
+                border-bottom: 16px solid transparent;
+                border-left: 16px solid $color-grey-level1;
+            }
+            & > li.active
+            {
+                background-color: $color-grey;
+                & > a,
+                & > a:focus,
+                & > a:hover
+                {
+                    background: transparent;
+                }
+            }
+            & > li:hover
+            {
+                background-color: $color-grey;
+            }
+            & > li:hover:after,
+            & > li.active:after
+            {
+                border-left: 15px solid $color-grey;
+            }
+            & > li:last-child
+            {
+                border-right: 1px solid $color-grey-level1;
+            }
+            & > li.step-success
+            {
+                border: 1px solid $color-green-sea;
+                background-color: $color-clear-green-sea;
+                a
+                {
+                    color: $color-darkest-green-sea;
+                }
+            }
+            & > li.step-disabled
+            {
+                background-color: $color-clear-green-sea;
+            }
+            & > li.step-success:after
+            {
+                border-left: 15px solid $color-clear-green-sea;
+            }
+            & > li.step-success.active:hover:after
+            {
+                border-left: 15px solid $color-clear-green-sea;
+            }
+            & > li.step-success:hover:after
+            {
+                border-left: 15px solid $color-grey;
+            }
+        }
+    }
+    .step.card-no-padding
+    {
+        .nav-tabs
+        {
+            & > li
+            {
+                border: 0 solid transparent;
+                border-right: 1px solid $color-grey-level1;
+                border-bottom: 1px solid $color-grey-level1;
+            }
+            & > li:last-child
+            {
+                border-right: 0 solid $color-grey-level1;
+            }
+        }
+    }
+    .step.tabs-left
+    {
+        .nav-tabs
+        {
+            & > li
+            {
+                border: 1px solid $color-grey-level1;
+            }
+            & > li:after
+            {
+                border-top: 15px solid transparent;
+                border-bottom: 15px solid transparent;
+                border-left: 15px solid $color-white;
+            }
+            & > li:before
+            {
+                border-top: 16px solid transparent;
+                border-bottom: 16px solid transparent;
+                border-left: 16px solid $color-grey-level1;
+            }
+            & > li.active
+            {
+                background-color: $color-grey;
+                & > a,
+                & > a:focus,
+                & > a:hover
+                {
+                    background: transparent;
+                }
+            }
+            & > li:hover
+            {
+                background-color: $color-grey;
+            }
+            & > li:hover:after,
+            & > li.active:after
+            {
+                border-left: 15px solid $color-grey;
+            }
+        }
+    }
+    .step.tabs-left.card-no-padding
+    {
+        .nav-tabs
+        {
+            & > li
+            {
+                border: 0 solid transparent;
+            }
+        }
+    }
+    // pricing table
+    .pricing-table
+    {
+        box-shadow: 0 1px 1px $color-grey-level3;
+        .pt-header
+        {
+            background-color: $color-grey-level1;
+            .plan-pricing
+            {
+                .pricing
+                {
+                    text-shadow: 0 1px 1px $color-white;
+                }
+            }
+        }
+        .pt-body
+        {
+            background-color: $color-light-grey;
+            .plan-detail
+            {
+                margin-top: 1em;
+                padding-top: 1em;
+
+                border-top: 1px dashed rgba(255,255,255,.6);
+            }
+        }
+        .pt-footer
+        {
+            background-color: $color-light-grey;
+        }
+    }
+    // pricing table
+    .pricing-table.dark-blue
+    {
+        .pt-header
+        {
+            color: $color-white;
+            background-color: $color-black;
+        }
+        .pt-body
+        {
+            color: $color-dark-blue-hover;
+            background-color: $color-clearer-dark-blue;
+        }
+    }
+    // pricing table
+    .pricing-table.green
+    {
+        .pt-header
+        {
+            color: $color-white;
+            background-color: $color-green-sea;
+        }
+        .pt-body
+        {
+            color: $color-darkest-green-sea;
+            background-color: $color-clear-green-sea;
+        }
+    }
+    // pricing table
+    .pricing-table.blue
+    {
+        .pt-header
+        {
+            color: $color-white;
+            background-color: $color-blue;
+        }
+        .pt-body
+        {
+            color: $color-darkest-blue;
+            background-color: $color-clear-blue;
+        }
+    }
+    // pricing table
+    .pricing-table.yellow
+    {
+        .pt-header
+        {
+            color: $color-white;
+            background-color: $color-yellow;
+        }
+        .pt-body
+        {
+            color: $color-darkest-yellow;
+            background-color: $color-clear-yellow;
+        }
+    }
+    // pricing table
+    .pricing-table.red
+    {
+        .pt-header
+        {
+            color: $color-white;
+            background-color: $color-red;
+        }
+        .pt-body
+        {
+            color: $color-darkest-red;
+            background-color: $color-clear-red;
+        }
+    }
+}

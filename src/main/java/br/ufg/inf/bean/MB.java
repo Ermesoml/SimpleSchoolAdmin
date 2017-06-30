@@ -11,30 +11,35 @@ import java.util.Map;
 
 public class MB implements Serializable {
 
-    @ManagedProperty(name = "userService", value = "#{UserService}")
-    private IUserBo userService;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-    protected Flash flashContainer(){
-        return getFacesContext().getExternalContext().getFlash();
-    }
+	@ManagedProperty(name = "userService", value = "#{UserService}")
+	private IUserBo userService;
 
-    protected Map<String, Object> requestContainer(){
-        return getFacesContext().getExternalContext().getRequestMap();
-    }
+	protected Flash flashContainer() {
+		return getFacesContext().getExternalContext().getFlash();
+	}
 
-    protected HttpServletRequest getRequest() {
-        return (HttpServletRequest) getFacesContext().getExternalContext().getRequest();
-    }
+	protected Map<String, Object> requestContainer() {
+		return getFacesContext().getExternalContext().getRequestMap();
+	}
 
-    FacesContext getFacesContext() {
-        return FacesContext.getCurrentInstance();
-    }
+	protected HttpServletRequest getRequest() {
+		return (HttpServletRequest) getFacesContext().getExternalContext().getRequest();
+	}
 
-    protected IUserBo getUserService() {
-        return userService;
-    }
+	FacesContext getFacesContext() {
+		return FacesContext.getCurrentInstance();
+	}
 
-    public void setUserService(IUserBo userService) {
-        this.userService = userService;
-    }
+	protected IUserBo getUserService() {
+		return userService;
+	}
+
+	public void setUserService(IUserBo userService) {
+		this.userService = userService;
+	}
 }

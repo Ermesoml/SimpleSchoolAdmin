@@ -8,14 +8,24 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * The Class AssignmentDao.
+ */
 @Repository
 public class AssignmentDao extends GenericDao<Assignment> implements AssignmentDaoContract {
 
+    /**
+     * Instantiates a new assignment dao.
+     */
     public AssignmentDao(){
         super(Assignment.class);
     }
 
-    @Override
+    /* (non-Javadoc)
+     * @see br.ufg.inf.dao.contracts.AssignmentDaoContract#obtainByTermAndCourse(java.lang.Long, java.lang.Long)
+     */
+    @SuppressWarnings("unchecked")
+	@Override
     public List<Assignment> obtainByTermAndCourse(Long termId, Long courseId) {
 
         Criteria criteria = dbSession().createCriteria(Assignment.class);

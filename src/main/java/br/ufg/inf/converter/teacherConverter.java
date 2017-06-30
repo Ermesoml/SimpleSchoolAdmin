@@ -10,14 +10,21 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 
+/**
+* Responsável por converter objetos de controlador para objetos de contexto
+ */
 @ManagedBean
 @RequestScoped
 public class teacherConverter implements Converter {
 
+    /** The teacher service. */
     @ManagedProperty(name = "teacherService", value = "#{TeacherService}")
     private ITeacherBo teacherService;
 
 
+    /* (non-Javadoc)
+     * @see javax.faces.convert.Converter#getAsObject(javax.faces.context.FacesContext, javax.faces.component.UIComponent, java.lang.String)
+     */
     @Override
     public Object getAsObject(FacesContext facesContext, UIComponent uiComponent, String s) {
 
@@ -28,6 +35,9 @@ public class teacherConverter implements Converter {
         return null;
     }
 
+    /* (non-Javadoc)
+     * @see javax.faces.convert.Converter#getAsString(javax.faces.context.FacesContext, javax.faces.component.UIComponent, java.lang.Object)
+     */
     @Override
     public String getAsString(FacesContext facesContext, UIComponent uiComponent, Object o) {
 
@@ -39,10 +49,20 @@ public class teacherConverter implements Converter {
         return "";
     }
 
+    /**
+     * Gets the teacher service.
+     *
+     * @return the teacher service
+     */
     public ITeacherBo getTeacherService() {
         return teacherService;
     }
 
+    /**
+     * Sets the teacher service.
+     *
+     * @param teacherService the new teacher service
+     */
     public void setTeacherService(ITeacherBo teacherService) {
         this.teacherService = teacherService;
     }

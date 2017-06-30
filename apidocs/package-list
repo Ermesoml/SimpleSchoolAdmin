@@ -1,0 +1,12 @@
+br.ufg.inf
+br.ufg.inf.Utils
+br.ufg.inf.bean
+br.ufg.inf.bean.admin
+br.ufg.inf.bean.student
+br.ufg.inf.bean.teacher
+br.ufg.inf.business
+br.ufg.inf.business.contracts
+br.ufg.inf.converter
+br.ufg.inf.dao
+br.ufg.inf.dao.contracts
+br.ufg.inf.entities
